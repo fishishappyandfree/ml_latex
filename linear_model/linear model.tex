@@ -16,14 +16,13 @@
 \author{Fish}
 \date{\today}
 
-
 % 内容与格式分离
 % 设置标题的格式
 \ctexset {
 	section = {
 		format+=\zihao {-4} \heiti \raggedright,
 		name = {,},
-		number = \chinese{section},
+		%number = \chinese{section},
 		beforeskip = 1.0ex plus 0.2ex minus .2ex,
 		afterskip = 1.0ex plus 0.2ex minus .2ex,
 		aftername = \hspace{0pt}
@@ -32,7 +31,7 @@
 		format+=\zihao{5} \heiti \raggedright,
 		% name={\thesubsection},
 		name = {,},
-		number = \arabic{subsection},
+		%number = \arabic{subsection},
 		beforeskip = 1.0ex plus 0.2ex minus .2ex,
 		afterskip = 1.0ex plus 0.2ex minus .2ex,
 		aftername = \hspace{0pt}
@@ -203,5 +202,71 @@
 	R^2 = 1-\frac{\sum_{i=1}^{m}(\hat{y}_i - y_i)^2}{\sum_{i=1}^{m}(y_i - \bar{y}_i)^2}
 	\end{equation}
 	when $R^2$ value is very close approximation to 1, the model fits dataset D well.
+	
+	\subsection{\quad deep analysis}
+	if $X^TX$ is irreversible or avoid over fitting, increase $\lambda$ destabilization
+	\begin{equation}
+	\theta = (X^TX + \lambda I)^{-1}X^Ty
+	\end{equation} 
+	
+	to remember conclusion simply,
+	\begin{align}
+		\begin{split}
+		X\theta = y \Rightarrow X^TX\theta = X^Ty \Rightarrow \theta = (X^TX)^{-1}X^Ty
+		\end{split}
+	\end{align}
+	
+	after add $\lambda$ destabilization:
+	\begin{itemize}
+		\item $X^TX$ is positive semidefinite matrix: for any non-zero vector u
+		\begin{equation}
+			\theta X^T X \theta = (X \theta)^T X \theta \overset{define\  v = X \theta}{  \longrightarrow} v^T v \geq 0
+		\end{equation}
+		\item for any real $\lambda > 0$, $X^T X + \lambda I$ is positive definite matrix, and is reversible. be sure that regerssion equation must be significative.
+		\begin{equation}\theta = (X^T X + \lambda I)^{-1} X^T y\end{equation}
+	\end{itemize}
+
+	\subsection{\quad penalty factor}
+	\begin{itemize}
+		\item the target function of linear regerssion:
+			\begin{align}
+			J(\theta) = \frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^i) - y^i)^2
+			\end{align}
+		
+		\item increase square sum loss:
+			\begin{align}
+			J(\theta) = \frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^i) - y^i)^2 + \lambda \sum_{j=1}^{m}\theta_{j}^{2}
+			\end{align}
+			
+		\item actually, assume that parameter $\theta$ obey Gaussian distribution
+	\end{itemize}
+
+	\subsection{\quad |w|and $|\text{w}|^2$}
+	\begin{figure}[H]
+		\vspace{-0.2cm}  %调整图片与上文的垂直距离
+		\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+		%\setlength{\belowcaptionskip}{0.5cm}   %调整图片标题与下文距离
+		\centering
+		\includegraphics[scale=0.4]{w_and_w^2.png}
+		\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+		\caption{|w| and $|\text{w}|^2$}
+		\label{fig:1}
+	\end{figure}
+		
+	\section{\quad machine learning and data analysis}
+	\begin{figure}[H]
+		\vspace{-0.5cm}  %调整图片与上文的垂直距离
+		\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+		%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+		\centering
+		\includegraphics[scale=0.4]{machine_learning_and_data_analysis.png}
+		\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+		\caption{machine learning and data analysis}
+		\label{fig:1}
+	\end{figure}
+	\begin{itemize}
+		\item cross validation:
+		\subitem example: 10 folk cross validation
+	\end{itemize}
 \end{document}
 
