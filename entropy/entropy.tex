@@ -1,0 +1,63 @@
+% 导言区，进行全局设置
+\documentclass[12pt]{ctexart}%book, report, latter， 引入文档类
+
+%\usepackage{ctex}
+%\usepackage[fleqn]{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumerate} % when need define format to number by myself
+\usepackage[colorlinks,linkcolor=red]{hyperref} % set super link
+
+% \newcommand命令的定义，新的命令
+\newcommand\degree{^\circ}
+\title{\kaishu entropy}
+\author{Fish}
+\date{\today}
+
+
+% 内容与格式分离
+% 设置标题的格式
+\ctexset {
+	section = {
+		format+=\zihao {-4} \heiti \raggedright,
+		name = {,},
+		%number = \chinese{section},
+		beforeskip = 1.0ex plus 0.2ex minus .2ex,
+		afterskip = 1.0ex plus 0.2ex minus .2ex,
+		aftername = \hspace{0pt}
+	},
+	subsection = {
+		format+=\zihao{5} \heiti \raggedright,
+		% name={\thesubsection},
+		name = {,},
+		%number = \arabic{subsection},
+		beforeskip = 1.0ex plus 0.2ex minus .2ex,
+		afterskip = 1.0ex plus 0.2ex minus .2ex,
+		aftername = \hspace{0pt}
+	}
+}
+
+% 正文区（文稿区）,有且只有一个document环境
+% \begim{*环境名称}
+%        内容
+% \end{*环境名称}
+\begin{document}
+	\maketitle
+	%\clearpage
+	\renewcommand{\contentsname}{Content} % set the 目录 to Content
+	\tableofcontents
+	\clearpage
+	\pagestyle{fancy}
+	\lhead{entropy by wzs}                   
+	\rhead{Page \thepage{} of \pageref{LastPage}}
+	
+	reference two blog:
+	
+	\qquad	\url{https://www.cnblogs.com/kyrieng/p/8694705.html}
+	
+	\qquad  \url{https://zhuanlan.zhihu.com/p/25197792}
+\end{document}
