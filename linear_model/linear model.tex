@@ -9,6 +9,7 @@
 \usepackage{lastpage}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage[colorlinks,linkcolor=black]{hyperref} % set super link
 
 % \newcommand命令的定义，新的命令
 \newcommand\degree{^\circ}
@@ -45,6 +46,9 @@
 \begin{document}
 	\maketitle
 	%\clearpage
+	\renewcommand{\contentsname}{Content} % set the 目录 to Content
+	\tableofcontents
+	\clearpage
 	\pagestyle{fancy}
 	\lhead{linear model by wzs}                   
 	\rhead{Page \thepage{} of \pageref{LastPage}}
@@ -75,67 +79,67 @@
 	{\heiti mean square error} is correspondinng to {\heiti Euclidean distance}.  The way solve model based on mean square error named least square method. according to linear regression, least square method try to find a line that make the Euclidean distance sum of sample to line be least.
 	
 	\subsection{\quad processing}
-	find least value of equation 3 and 4, get the $w^*,b^*$ 
-	%\setlength{\abovedisplayskip}{1pt}
-	\begin{align}
-	({{w}^{*}},{{b}^{*}}) & =\underset{(w,b)}{\mathop{\arg \min }}\,\sum\limits_{i=1}^{m}{{{(f({{x}_{i}})-{{y}_{i}})}^{2}}} \\ 
-	& =\underset{(w,b)}{\mathop{\arg \min }}\,\sum\limits_{i=1}^{m}{{{(w{{x}_{i}}+b-{{y}_{i}})}^{2}}} 
-	\end{align}
-	the progress solving the above equation named least square parameter estimation. there differenetiate w and b, could get following part:
-	\begin{align}
-	\frac{\partial E(w,b)}{\partial w}&=\sum\limits_{i=1}^{m}{2(-{{y}_{i}}+b+w{{x}_{i}}){{x}_{i}}}=2\sum\limits_{i=1}^{m}{[wx_{i}^{2}-({{y}_{i}}-b)}{{x}_{i}}]\\
-	\frac{\partial E(w,b)}{\partial b}&=\sum\limits_{i=1}^{m}{2(-{{y}_{i}}+b+w{{x}_{i}})}=2[mb-\sum\limits_{i=1}^{m}{({{y}_{i}}-w{{x}_{i}}})]
-	\end{align}
+		find least value of equation 3 and 4, get the $w^*,b^*$ 
+		%\setlength{\abovedisplayskip}{1pt}
+		\begin{align}
+			({{w}^{*}},{{b}^{*}}) & =\underset{(w,b)}{\mathop{\arg \min }}\,\sum\limits_{i=1}^{m}{{{(f({{x}_{i}})-{{y}_{i}})}^{2}}} \\ 
+			& =\underset{(w,b)}{\mathop{\arg \min }}\,\sum\limits_{i=1}^{m}{{{(w{{x}_{i}}+b-{{y}_{i}})}^{2}}} 
+		\end{align}
+		the progress solving the above equation named least square parameter estimation. there differenetiate w and b, could get following part:
+		\begin{align}
+			\frac{\partial E(w,b)}{\partial w}&=\sum\limits_{i=1}^{m}{2(-{{y}_{i}}+b+w{{x}_{i}}){{x}_{i}}}=2\sum\limits_{i=1}^{m}{[wx_{i}^{2}-({{y}_{i}}-b)}{{x}_{i}}]\\
+			\frac{\partial E(w,b)}{\partial b}&=\sum\limits_{i=1}^{m}{2(-{{y}_{i}}+b+w{{x}_{i}})}=2[mb-\sum\limits_{i=1}^{m}{({{y}_{i}}-w{{x}_{i}}})]
+		\end{align}
 
-	then optimizer solution fo closed-form is shown:
-	\begin{align}
-	w&=\frac{\sum\limits_{i=1}^{m}{{{y}_{i}}({{x}_{i}}-\bar{x})}}{\sum\limits_{i=1}^{m}{x_{i}^{2}-\frac{1}{m}{{(\sum\limits_{i=1}^{m}{{{x}_{i}}})}^{2}}}}\\
-	b&=\frac{1}{m}\sum\limits_{i=1}^{m}{(y{}_{i}-w{{x}_{i}})}
-	\end{align}
+		then optimizer solution fo closed-form is shown:
+		\begin{align}
+			w&=\frac{\sum\limits_{i=1}^{m}{{{y}_{i}}({{x}_{i}}-\bar{x})}}{\sum\limits_{i=1}^{m}{x_{i}^{2}-\frac{1}{m}{{(\sum\limits_{i=1}^{m}{{{x}_{i}}})}^{2}}}}\\
+			b&=\frac{1}{m}\sum\limits_{i=1}^{m}{(y{}_{i}-w{{x}_{i}})}
+		\end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{\quad one sample has multiply property}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.5]{fitting_plane.jpg}
-		\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
-		\caption{fitting plane in sample space}
-		\label{fig:1}
-	\end{figure}
-	the common condition is as section one show, dataset D has d property. at present, it should try to study 
-	\begin{equation}f(\boldsymbol x_i) = \boldsymbol{w^{T}}\boldsymbol{x_{i}} + b\end{equation}
-	\qquad let \begin{equation}f(\boldsymbol x_i)\cong{y_i}\end{equation}
-	\qquad this condition named multivariate linear regression.
-	\subsection{\quad analysis}
-	similarly, estimate w and b by least square method. 
-	conveniently, 
-	\begin{equation}\hat{\boldsymbol{w}} = (\boldsymbol{w}; b)\end{equation}
-	dataset D show as a matrix $\boldsymbol{X}$, shape $m\times (d+1)$
-	\begin{equation}
-	\boldsymbol{X}\text{=}
-	\left( 
-	\begin{matrix}
-	{{x}_{11}} & {{x}_{12}} & \cdots  & {{x}_{1d}} & 1  \\
-	{{x}_{21}} & {{x}_{22}} & \cdots  & {{x}_{2d}} & 1  \\
-	\vdots  & \vdots  & \ddots  & \vdots  & \vdots   \\
-	{{x}_{m1}} & {{x}_{m2}} & \cdots  & {{x}_{md}} & 1  \\
-	\end{matrix} 
-	\right)
-	=
-	\left( 
-	\begin{matrix}
-	x_{1}^{T} & 1  \\
-	x_{2}^{T} & 1  \\
-	\vdots  & \vdots   \\
-	x_{m}^{T} & 1  \\
-	\end{matrix} 
-	\right)
-	\end{equation}
-	\begin{equation}\text{tag }\boldsymbol{y} = (y_1; y_2; \cdots; y_m)\end{equation}
-	so fitting plane \begin{equation}h_w(x) = w_0+w_1x+w_2x+...+w_dx, w_0 
-	\text{ is bias}\end{equation}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{fitting_plane.jpg}
+			\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+			\caption{fitting plane in sample space}
+			\label{fig:1}
+		\end{figure}
+		the common condition is as section one show, dataset D has d property. at present, it should try to study 
+		\begin{equation}f(\boldsymbol x_i) = \boldsymbol{w^{T}}\boldsymbol{x_{i}} + b\end{equation}
+		\qquad let \begin{equation}f(\boldsymbol x_i)\cong{y_i}\end{equation}
+		\qquad this condition named multivariate linear regression.
+		\subsection{\quad analysis}
+		similarly, estimate w and b by least square method. 
+		conveniently, 
+		\begin{equation}\hat{\boldsymbol{w}} = (\boldsymbol{w}; b)\end{equation}
+		dataset D show as a matrix $\boldsymbol{X}$, shape $m\times (d+1)$
+		\begin{equation}
+			\boldsymbol{X}\text{=}
+			\left( 
+			\begin{matrix}
+			{{x}_{11}} & {{x}_{12}} & \cdots  & {{x}_{1d}} & 1  \\
+			{{x}_{21}} & {{x}_{22}} & \cdots  & {{x}_{2d}} & 1  \\
+			\vdots  & \vdots  & \ddots  & \vdots  & \vdots   \\
+			{{x}_{m1}} & {{x}_{m2}} & \cdots  & {{x}_{md}} & 1  \\
+			\end{matrix} 
+			\right)
+			=
+			\left( 
+			\begin{matrix}
+			x_{1}^{T} & 1  \\
+			x_{2}^{T} & 1  \\
+			\vdots  & \vdots   \\
+			x_{m}^{T} & 1  \\
+			\end{matrix} 
+			\right)
+		\end{equation}
+		\begin{equation}\text{tag }\boldsymbol{y} = (y_1; y_2; \cdots; y_m)\end{equation}
+		so fitting plane \begin{equation}h_w(x) = w_0+w_1x+w_2x+...+w_dx, w_0 
+		\text{ is bias}\end{equation}
 	
-	in summary, \begin{equation}h_w(x) = \sum_{i=0}^{n}w_{i}x_{i} = w^{T}x\end{equation}
+		in summary, \begin{equation}h_w(x) = \sum_{i=0}^{n}w_{i}x_{i} = w^{T}x\end{equation}
 	
 	\subsection{\quad processing}
 	$\boldsymbol \varepsilon$ error, represent the difference between true and predict value.
@@ -254,7 +258,8 @@
 		\caption{|w| and $|\text{w}|^2$}
 		\label{fig:1}
 	\end{figure}
-		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{\quad machine learning and data analysis}
 	\begin{figure}[H]
 		\vspace{-0.5cm}  %调整图片与上文的垂直距离

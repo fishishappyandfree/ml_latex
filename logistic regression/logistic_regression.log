@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.7)  19 JUN 2019 10:37
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.7)  22 JUN 2019 09:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -899,7 +899,7 @@ File: Mini-Batch_Gradient_Descent.png Graphic file (type bmp)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 12.0pt
-(hyperref)                removed on input line 324.
+(hyperref)                removed on input line 344.
 
 
 Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
@@ -928,25 +928,25 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 12.0pt
-(hyperref)                removed on input line 398.
+(hyperref)                removed on input line 423.
 
 [12] [13]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 12.0pt
-(hyperref)                removed on input line 456.
+(hyperref)                removed on input line 483.
 
 [14] 
 AED: lastpage setting LastPage
 [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 477.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 477.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 508.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 508.
  (./logistic_regression.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 477.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 477.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 508.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 508.
 Package rerunfilecheck Info: File `logistic_regression.out' has not changed.
 (rerunfilecheck)             Checksum: 7264508E5076321702F05AEF3D77E423.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 477.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 508.
  ) 
 Here is how much of TeX's memory you used:
  24550 strings out of 492940
@@ -955,6 +955,6 @@ Here is how much of TeX's memory you used:
  28334 multiletter control sequences out of 15000+600000
  540328 words of font info for 90 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 54i,21n,68p,825b,776s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,21n,68p,825b,774s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on logistic_regression.pdf (15 pages).

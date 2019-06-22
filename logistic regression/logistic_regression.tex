@@ -178,25 +178,30 @@
 									\frac{\nabla J(\theta_0, \theta_1)}{\nabla \theta_j} = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^i) - y^i)x_j^i
 								\end{equation}
 								among $i = 1,2,...,m$ show sample number, $j = 0,1$ show feature number, here, we use partial part $x_0^i = 1$
+								
 						\item update parameter one times iteration:
 								\begin{equation}
 									\theta_j := \theta_j - \alpha\frac{1}{m}\sum_{i=1}{m}(h_\theta(x^i) - y^i)x_j^i
 								\end{equation}
 								note that here is a sum function, indicate that deal with all sample, and compare following article
+								
 						\item Pseudo code form as following:\\
 						repeat\{
 							$$\theta_j := \theta_j - \alpha\frac{1}{m}\sum_{i=1}{m}(h_\theta(x^i) - y^i)x_j^i$$
 							\qquad \qquad \qquad(for $j = 0,1$)\\
 						\}
+						
 						\item advantages:
 						\begin{enumerate}
 							\item calculate all sample every derivation, meanwhile operate matrix and implement parallel
 							\item confirm the direction due to all dataset could represent sample population, and turn to direction fo extreme value more correctly. when target function is convex function, BGD must be able to get global optimization.
 						\end{enumerate}
+					
 						\item disadvantages:
 						\begin{enumerate}
 							\item when sample number m is large, it needs calculate all sample every derivation step, and the train progress will be slow.
 						\end{enumerate}
+					
 						\item convergence curve, that derivation number is less for it.
 						\begin{figure}[H]
 							\vspace{-0.2cm}  %调整图片与上文的垂直距离
@@ -219,14 +224,17 @@
 							\begin{equation}
 								J^i (\theta_0, \theta_1) = \frac{1}{2}(h_\theta(x^i) - y^i)^2
 							\end{equation}
+							
 						\item derivation for target function
 							\begin{equation}
 								\frac{\nabla J^i(\theta_0, \theta_1)}{\theta_j} = (h_\theta(x^i) - y^i)x_j^i
 							\end{equation}
+							
 						\item parameter updated
 							\begin{equation}
 								\theta_j := \theta_j - \alpha(h_\theta(x^i) - y^i)x_j^i
 							\end{equation}
+							
 						\item Pseudo code form as following:\\
 						Loop\{
 						
@@ -237,19 +245,23 @@
 						\qquad \}
 						
 						\}
+						
 						\item advantages
 							\begin{enumerate}
 								\item because that the loss function is not belong to the all train dataset, and in every iteration, optimize the loss function of anyone train data randomly,  it will accellerate the update speed more quickly.
 							\end{enumerate}
+						
 						\item disadvantages
 							\begin{enumerate}
 								\item accuracy will be decline. although target function is convex function, SGD couldn't still converge linearly. 
 								\item maybe converge to the local optimization, due to signal sample couldn't represent the trend of all sample.
 								\item be not easy to realize.
 							\end{enumerate}
+						
 						\item explain why SGD is faster than BGD for the convergence speed.\\
 							answer:  here assump that it is 30W sample, one the hand, for BGD, here need calculate 30W sample every iteration and update parameter one times. So it maybe to be iterated for many times like 10 times. on the other hand, for SGD, it only needs a sample every iteration, thus when update the parameter using 30W sample, during the period, it could converge to a suitable minimize value by SGD.
 							what's more, at convergence, BGD have calculated for $10\times 30W$ times, and SGD have calculated for $1\times 30W$ times. 
+							
 						\item convergence curve, the iteration times is pretty high, the sovelution space seem like be blind. as following:
 						\begin{figure}[H]
 							\vspace{-0.2cm}  %调整图片与上文的垂直距离
@@ -278,28 +290,36 @@
 							\qquad \}
 							
 							\}
+							
 						\item advantages:
 							\begin{enumerate}
 								\item by matrix operation, optimize nenural network parameter isn't slower much than on one batch  signal data every times.
 								\item it could decline iteration times enormously that converge when using one batch. meanwhile, it could make the result gotten convergence to close the impact of gradient descent.(for example, above 30W, set batch\_size = 100, need iterate for 3000 times, more less than 30W times of SGD)
 								\item be able to realize parallel.
 							\end{enumerate}
+						
 						\item disadvantages:
 							\begin{enumerate}
 								\item the unsuitable selection maybe bring some problem.
 							\end{enumerate}
+						
 						\item the influence due to the selection fo batch\_size
 							\begin{enumerate}[i]
 								\item in reasonable range, the benefit increasing batch\_size:
 									\begin{enumerate}[1)]
 										\item the memory utilization rate increased, the parallel affect of big matrix multiply increased
+										
 										\item the iteration frequency declined when run a epoch (all dataset), for equal number of data, the calculate speed increased.
+										
 										\item in certain range, the more big batch\_size in general, the decline direction is preciser, the wave of train is more small.
 									\end{enumerate}
+								
 								\item the badness of increasing batch\_size blindly
 									\begin{enumerate}[1)]
 										\item although the memory utilization rate increased, the capacity of memory couldn't support
+										
 										\item although the iteration frequency declined when run a epoch (all dataset), if want to get the equal precision, the cost time also increased, and the updated speed become slowly.
+										
 										\item when batch\_size increase in a certain extent, the ensure decline direction don't vary.
 									\end{enumerate}
 							\end{enumerate}
@@ -344,7 +364,9 @@
 					\item assump that :
 										$$P(y=1|x;\theta) = h_\theta(x)$$
 										$$p(y=0|x;\theta) = 1 - h_\theta(x)$$
+										
 					\item so likelihood term : $$p(y|x;\theta) = (h_\theta(x))^{y} (1-h_\theta(x))^{1-y}$$
+					
 					\item the likelihood function:
 						  \begin{align}
 						  	  \begin{split}
@@ -353,6 +375,7 @@
 						  	  	  			&= \prod_{i=1}^{m}(h_\theta(x^i))^{y^i} (1-h_\theta(x^i))^{1-y^i}
 						  	  \end{split}
 						  \end{align}
+						  
 					\item log likelihood function
 					\begin{align}
 						\begin{split}
@@ -375,6 +398,7 @@
 						\begin{equation}
 							\theta_j : = \theta_j + \alpha(y^i - h_\theta(x^i))x_j^i
 						\end{equation}
+						
 					\item retult compared with the linear regression
 						they have same format.
 						\begin{enumerate}
@@ -382,6 +406,7 @@
 							$$\theta_j := \theta_j + \alpha\frac{1}{m}\sum_{i=1}{m}(y^i - h_\theta(x^i))x_j^i$$
 							\qquad \qquad \qquad(for $j = 0,1$)\\
 							\}
+							
 							\item 	Loop\{
 							
 							\qquad for i = 1 to m, \{
@@ -398,6 +423,7 @@
 	\section{\quad log linear model}
 		\begin{enumerate}
 			\item the odds fo event, indicate that the ratio between odds happen and not happen probability.
+			
 			\item log odds logit function
 				\begin{align}
 					P(y=1|x;\theta) &= h_\theta(x)\\
@@ -408,6 +434,7 @@
 					= \log{\left( \frac{\frac{1}{1+e^{-\theta^Tx}}}{\frac{e^{-\theta^Tx}}{1+e{-\theta^Tx}}} \right)}
 					= \theta^Tx
 				\end{align} 
+				
 			\item loss function of logistic regression $y_i\in\{0,1\}$
 				\begin{align}
 					y_i&\in\{0,1\}\\
@@ -456,18 +483,22 @@
 	\section{\quad softmax regression}
 		\begin{enumerate}
 			\item K classfication, the parameter of kth class  is $\vec{\theta_k}$, form two dimension matrix $\theta_{k \times n}$
+			
 			\item probability: 
 				\begin{align}
 					p(c=k|x;\theta) = \frac{\text{exp}(\theta_k^T x)}{\sum_{l=1}^{K}\text{exp}(\theta_l^T x)}, \quad k=1,2,...,K
 				\end{align}
+				
 			\item likelihood function:
 				\begin{align}
 					L(\theta) = \prod_{i=1}^{m}\prod_{k=1}^{K}p(c=k|x^i; \theta)^{y_k^i} = \prod_{i=1}^{m}\prod_{k=1}^{K}\frac{\text{exp}(\theta_k^T x^i)^{y_k^i}}{\sum_{l=1}^{K}\text{exp}(\theta_l^T x^i)}
 				\end{align}
+				
 			\item log likelihood:
 				\begin{align}
 					J_m(\theta) = \ln L(\theta) = \sum_{i=1}^{m}\sum_{k=1}^{K}\left( y_k^i \cdot \theta_k^T x^i - \ln \sum_{l=1}^{K}\text{exp}(\theta_l^T x^i)\right)
 				\end{align}
+				
 			\item stochastic gradient:
 				\begin{align}
 					J(\theta) &= \sum_{k=1}^{K}y_k \cdot \left( \theta_k^T x - \ln \sum_{l=1}^{K} \text{exp}(\theta_l^T x)\right)\\

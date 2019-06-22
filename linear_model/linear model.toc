@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}\hskip 1em\relax What}{2}{section.1}% 
+\contentsline {section}{\numberline {2}\hskip 1em\relax one sample has one property}{2}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}\hskip 1em\relax background}{2}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}\hskip 1em\relax analysis}{2}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.3}\hskip 1em\relax processing}{3}{subsection.2.3}% 
+\contentsline {section}{\numberline {3}\hskip 1em\relax one sample has multiply property}{4}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}\hskip 1em\relax analysis}{4}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}\hskip 1em\relax processing}{5}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}\hskip 1em\relax deep analysis}{7}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}\hskip 1em\relax penalty factor}{7}{subsection.3.4}% 
+\contentsline {subsection}{\numberline {3.5}\hskip 1em\relax |w|and $|\text {w}|^2$}{8}{subsection.3.5}% 
+\contentsline {section}{\numberline {4}\hskip 1em\relax machine learning and data analysis}{8}{section.4}% 
