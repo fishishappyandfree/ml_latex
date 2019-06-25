@@ -1,0 +1,37 @@
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}\hskip 1em\relax perception}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}\hskip 1em\relax concept}{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}\hskip 1em\relax linearly separable dataset}{1}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}\hskip 1em\relax loss function}{1}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}\hskip 1em\relax original form of perception algorithm}{2}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}\hskip 1em\relax dual form of perception algorithm}{3}{section.1.5}% 
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}\hskip 1em\relax Convex function}{5}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}\hskip 1em\relax Convex collection and Convex function}{5}{section.2.1}% 
+\contentsline {subsection}{\numberline {2.1.1}\hskip 1em\relax Convex function}{5}{subsection.2.1.1}% 
+\contentsline {subsection}{\numberline {2.1.2}\hskip 1em\relax Convex collection}{5}{subsection.2.1.2}% 
+\contentsline {section}{\numberline {2.2}\hskip 1em\relax affine transformation}{6}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}\hskip 1em\relax concept}{6}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}\hskip 1em\relax theory}{6}{subsection.2.2.2}% 
+\contentsline {section}{\numberline {2.3}\hskip 1em\relax perspective collineation}{7}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}\hskip 1em\relax concept}{7}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}\hskip 1em\relax direct significance}{7}{subsection.2.3.2}% 
+\contentsline {subsection}{\numberline {2.3.3}\hskip 1em\relax summary}{7}{subsection.2.3.3}% 
+\contentsline {section}{\numberline {2.4}\hskip 1em\relax segmentation plane}{7}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}\hskip 1em\relax concept}{7}{subsection.2.4.1}% 
+\contentsline {subsection}{\numberline {2.4.2}\hskip 1em\relax segmentation plane}{8}{subsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.4.3}\hskip 1em\relax the structure of sefmentation plane}{8}{subsection.2.4.3}% 
+\contentsline {subsection}{\numberline {2.4.4}\hskip 1em\relax support hyperplane}{9}{subsection.2.4.4}% 
+\contentsline {subsection}{\numberline {2.4.5}\hskip 1em\relax question}{9}{subsection.2.4.5}% 
+\contentsline {section}{\numberline {2.5}\hskip 1em\relax property of convex function}{10}{section.2.5}% 
+\contentsline {subsection}{\numberline {2.5.1}\hskip 1em\relax concept}{10}{subsection.2.5.1}% 
+\contentsline {subsection}{\numberline {2.5.2}\hskip 1em\relax first-order derivative of convex function}{10}{subsection.2.5.2}% 
+\contentsline {subsection}{\numberline {2.5.3}\hskip 1em\relax second-order derivative of convex function}{10}{subsection.2.5.3}% 
+\contentsline {section}{\numberline {2.6}\hskip 1em\relax examples of convex function}{11}{section.2.6}% 
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}\hskip 1em\relax Convex Optimization}{12}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}\hskip 1em\relax optimization problem}{12}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}\hskip 1em\relax convex optimization}{13}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}\hskip 1em\relax basic form}{13}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}\hskip 1em\relax Lagrange乘子法}{13}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.3} Lagrange 函数的极小极大最优值 $\qopname \relax m{min}\limits _x\qopname \relax m{max}\limits _{\lambda , \nu : \lambda _i \geq 0} L(x, \lambda , \nu )$ 和 原问题的最优值 $p^*$}{14}{subsection.3.2.3}% 
+\contentsline {subsection}{\numberline {3.2.4}\hskip 1em\relax Lagrange 对偶函数 (dual function)}{15}{subsection.3.2.4}% 
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}\hskip 1em\relax SVM}{19}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}\hskip 1em\relax jiange}{19}{section.4.1}% 

@@ -11,6 +11,9 @@
 \usepackage{float}
 \usepackage[colorlinks,linkcolor=black]{hyperref} % set super link
 
+\usepackage{geometry}
+\geometry{a4paper,top=2.54cm,left=3.18cm,bottom=2.54cm,right=3.18cm,includehead,includefoot}
+
 % \newcommand命令的定义，新的命令
 \newcommand\degree{^\circ}
 \title{\kaishu Linear Model}
@@ -45,6 +48,7 @@
 % \end{*环境名称}
 \begin{document}
 	\maketitle
+	
 	%\clearpage
 	\renewcommand{\contentsname}{Content} % set the 目录 to Content
 	\tableofcontents
@@ -52,6 +56,8 @@
 	\pagestyle{fancy}
 	\lhead{linear model by wzs}                   
 	\rhead{Page \thepage{} of \pageref{LastPage}}
+	\setcounter{page}{1}
+	
 	\section{\quad What}
 	{\heiti \zihao{4}define the example x described by d property, $x=(x_1; x_2;...; x_d)$, among the variable x, $x_i$ is decided by ith property of x.}
 	

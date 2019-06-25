@@ -12,6 +12,9 @@
 \usepackage{enumerate} % when need define format to number by myself
 \usepackage[colorlinks,linkcolor=black]{hyperref} % set super link
 
+\usepackage{geometry}
+\geometry{a4paper,top=2.54cm,left=3.18cm,bottom=2.54cm,right=3.18cm,includehead,includefoot}
+
 % \newcommand命令的定义，新的命令
 \newcommand\degree{^\circ}
 \title{\kaishu entropy}
@@ -54,6 +57,7 @@
 	\pagestyle{fancy}
 	\lhead{entropy by wzs}                   
 	\rhead{Page \thepage{} of \pageref{LastPage}}
+	\setcounter{page}{1}
 	
 	reference two blog:
 	

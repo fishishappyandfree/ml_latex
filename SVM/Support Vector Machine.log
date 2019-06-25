@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.7)  22 JUN 2019 09:05
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.7)  25 JUN 2019 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **"Support Vector Machine.tex"
 (./Support Vector Machine.tex
 LaTeX2e <2018-12-01>
-(d:/software/Latex/latex2018/texmf-dist/tex/latex/ctex/ctexart.cls
+(d:/software/Latex/latex2018/texmf-dist/tex/latex/ctex/ctexbook.cls
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2019-02-15 L3 programming layer (loader) 
 
@@ -159,8 +159,8 @@ File: l3xdvipdfmx.def 2019-02-15 v L3 Experimental driver: xdvipdfmx
 \g__driver_image_int=\count159
 \g__driver_pdf_object_int=\count160
 ))
-Document Class: ctexart 2018/05/02 v2.4.14 Chinese adapter for class article (C
-TEX)
+Document Class: ctexbook 2018/05/02 v2.4.14 Chinese adapter for class book (CTE
+X)
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2018-10-17 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count161
@@ -195,19 +195,20 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
 File: ctexopts.cfg 2018/05/02 v2.4.14 Option configuration file (CTEX)
 )
-(d:/software/Latex/latex2018/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
-(d:/software/Latex/latex2018/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+(d:/software/Latex/latex2018/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2018/09/03 v1.4i Standard LaTeX document class
+(d:/software/Latex/latex2018/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count168
-\c@section=\count169
-\c@subsection=\count170
-\c@subsubsection=\count171
-\c@paragraph=\count172
-\c@subparagraph=\count173
-\c@figure=\count174
-\c@table=\count175
+\c@chapter=\count169
+\c@section=\count170
+\c@subsection=\count171
+\c@subsubsection=\count172
+\c@paragraph=\count173
+\c@subparagraph=\count174
+\c@figure=\count175
+\c@table=\count176
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen135
@@ -222,17 +223,17 @@ Package: xeCJK 2018/04/30 v3.7.1 Typesetting CJK scripts with XeLaTeX
 e.sty
 Package: xtemplate 2018-10-17 L3 Experimental prototype document functions
 \l__xtemplate_tmp_dim=\dimen136
-\l__xtemplate_tmp_int=\count176
+\l__xtemplate_tmp_int=\count177
 \l__xtemplate_tmp_muskip=\muskip16
 \l__xtemplate_tmp_skip=\skip49
 )
-\l__xeCJK_tmp_int=\count177
+\l__xeCJK_tmp_int=\count178
 \l__xeCJK_tmp_box=\box46
 \l__xeCJK_tmp_dim=\dimen137
 \l__xeCJK_tmp_skip=\skip50
-\g__xeCJK_space_factor_int=\count178
-\l__xeCJK_begin_int=\count179
-\l__xeCJK_end_int=\count180
+\g__xeCJK_space_factor_int=\count179
+\l__xeCJK_begin_int=\count180
+\l__xeCJK_end_int=\count181
 \c__xeCJK_CJK_class_int=\XeTeXcharclass1
 \c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
 \c__xeCJK_FullRight_class_int=\XeTeXcharclass3
@@ -242,7 +243,7 @@ Package: xtemplate 2018-10-17 L3 Experimental prototype document functions
 \c__xeCJK_CM_class_int=\XeTeXcharclass7
 \c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
 \l__xeCJK_last_skip=\skip51
-\g__xeCJK_node_int=\count181
+\g__xeCJK_node_int=\count182
 \c__xeCJK_CJK_node_dim=\dimen138
 \c__xeCJK_CJK-space_node_dim=\dimen139
 \c__xeCJK_default_node_dim=\dimen140
@@ -252,10 +253,10 @@ Package: xtemplate 2018-10-17 L3 Experimental prototype document functions
 \l__xeCJK_ccglue_skip=\skip52
 \l__xeCJK_ecglue_skip=\skip53
 \l__xeCJK_punct_kern_skip=\skip54
-\l__xeCJK_last_penalty_int=\count182
+\l__xeCJK_last_penalty_int=\count183
 \l__xeCJK_last_bound_dim=\dimen144
 \l__xeCJK_last_kern_dim=\dimen145
-\l__xeCJK_widow_penalty_int=\count183
+\l__xeCJK_widow_penalty_int=\count184
 
 Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
 (xtemplate)             argument(s) on line 2362.
@@ -279,10 +280,10 @@ Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
 \l__xeCJK_minimum_bound_dim=\dimen162
 \l__xeCJK_kerning_margin_dim=\dimen163
 \l__xeCJK_original_margin_dim=\dimen164
-\g__xeCJK_family_int=\count184
-\l__xeCJK_fam_int=\count185
-\g__xeCJK_fam_allocation_int=\count186
-\l__xeCJK_verb_case_int=\count187
+\g__xeCJK_family_int=\count185
+\l__xeCJK_fam_int=\count186
+\g__xeCJK_fam_allocation_int=\count187
+\l__xeCJK_verb_case_int=\count188
 \l__xeCJK_verb_exspace_skip=\skip55
  (d:/software/Latex/latex2018/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2019/02/12 v2.7b Font selection for XeLaTeX and LuaLaTeX
@@ -290,17 +291,17 @@ Package: fontspec 2019/02/12 v2.7b Font selection for XeLaTeX and LuaLaTeX
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2019/02/12 v2.7b Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count188
-\l__fontspec_language_int=\count189
-\l__fontspec_strnum_int=\count190
-\l__fontspec_tmp_int=\count191
-\l__fontspec_tmpa_int=\count192
-\l__fontspec_tmpb_int=\count193
-\l__fontspec_tmpc_int=\count194
-\l__fontspec_em_int=\count195
-\l__fontspec_emdef_int=\count196
-\l__fontspec_strong_int=\count197
-\l__fontspec_strongdef_int=\count198
+\l__fontspec_script_int=\count189
+\l__fontspec_language_int=\count190
+\l__fontspec_strnum_int=\count191
+\l__fontspec_tmp_int=\count192
+\l__fontspec_tmpa_int=\count193
+\l__fontspec_tmpb_int=\count194
+\l__fontspec_tmpc_int=\count195
+\l__fontspec_em_int=\count196
+\l__fontspec_emdef_int=\count197
+\l__fontspec_strong_int=\count198
+\l__fontspec_strongdef_int=\count199
 \l__fontspec_tmpa_dim=\dimen165
 \l__fontspec_tmpb_dim=\dimen166
 \l__fontspec_tmpc_dim=\dimen167
@@ -332,7 +333,7 @@ Package: xeCJKfntef 2018/04/30 v3.7.1 xeCJK font effect
 \UL@skip=\skip56
 \UL@hook=\toks14
 \UL@height=\dimen168
-\UL@pe=\count199
+\UL@pe=\count266
 \UL@pixel=\dimen169
 \ULC@box=\box49
 Package: ulem 2012/05/18
@@ -349,7 +350,7 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/cjk/texinput/CJKfntef.sty
 Package: CJKfntef 2015/04/18 4.8.4
 \CJK@fntefSkip=\skip57
-\CJK@nest=\count266
+\CJK@nest=\count267
 \CJK@fntefDimen=\dimen171
 \CJK@underdotBox=\box50
 \CJK@ULbox=\box51
@@ -369,7 +370,7 @@ Package: CJKfntef 2015/04/18 4.8.4
 
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/zhnumber/zhnumber.sty
 Package: zhnumber 2018/01/28 v2.6 Typesetting numbers with Chinese glyphs
-\l__zhnum_scale_int=\count267
+\l__zhnum_scale_int=\count268
 
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg
 File: zhnumber-utf8.cfg 2018/01/28 v2.6 Chinese numerals with UTF8 encoding
@@ -377,9 +378,9 @@ File: zhnumber-utf8.cfg 2018/01/28 v2.6 Chinese numerals with UTF8 encoding
 \l__ctex_heading_skip=\skip61
 
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chine
-se-article.def
-File: ctex-scheme-chinese-article.def 2018/05/02 v2.4.14 Chinese scheme for art
-icle (CTEX)
+se-book.def
+File: ctex-scheme-chinese-book.def 2018/05/02 v2.4.14 Chinese scheme for book (
+CTEX)
 
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cf
 g
@@ -448,13 +449,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count268
+\inf@bad=\count269
 LaTeX Info: Redefining \frac on input line 223.
-\uproot@=\count269
-\leftroot@=\count270
+\uproot@=\count270
+\leftroot@=\count271
 LaTeX Info: Redefining \overline on input line 385.
-\classnum@=\count271
-\DOTSCASE@=\count272
+\classnum@=\count272
+\DOTSCASE@=\count273
 LaTeX Info: Redefining \ldots on input line 482.
 LaTeX Info: Redefining \dots on input line 485.
 LaTeX Info: Redefining \cdots on input line 606.
@@ -463,15 +464,15 @@ LaTeX Info: Redefining \cdots on input line 606.
 \big@size=\dimen178
 LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
-\macc@depth=\count273
-\c@MaxMatrixCols=\count274
+\macc@depth=\count274
+\c@MaxMatrixCols=\count275
 \dotsspace@=\muskip17
-\c@parentequation=\count275
-\dspbrk@lvl=\count276
+\c@parentequation=\count276
+\dspbrk@lvl=\count277
 \tag@help=\toks17
-\row@=\count277
-\column@=\count278
-\maxfields@=\count279
+\row@=\count278
+\column@=\count279
+\maxfields@=\count280
 \andhelp@=\toks18
 \eqnshift@=\dimen179
 \alignsep@=\dimen180
@@ -538,7 +539,7 @@ File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
 )
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count280
+\c@float@type=\count281
 \float@exts=\toks22
 \float@box=\box57
 \@float@everytoks=\toks23
@@ -606,13 +607,13 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen187
-\Hy@linkcounter=\count281
-\Hy@pagecounter=\count282
+\Hy@linkcounter=\count282
+\Hy@pagecounter=\count283
 
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count283
+\Hy@SavedSpaceFactor=\count284
 
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -630,7 +631,7 @@ Package hyperref Info: Plain pages OFF on input line 4534.
 Package hyperref Info: Backreferencing OFF on input line 4539.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4772.
-\c@Hy@tempcnt=\count284
+\c@Hy@tempcnt=\count285
 
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
@@ -638,7 +639,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5125.
 \XeTeXLinkMargin=\dimen188
-\Fld@menulength=\count285
+\Fld@menulength=\count286
 \Field@Width=\dimen189
 \Fld@charsize=\dimen190
 Package hyperref Info: Hyper figures OFF on input line 6380.
@@ -650,9 +651,9 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6405.
 Package hyperref Info: PDF/A mode OFF on input line 6410.
 LaTeX Info: Redefining \ref on input line 6450.
 LaTeX Info: Redefining \pageref on input line 6454.
-\Hy@abspage=\count286
-\c@Item=\count287
-\c@Hfootnote=\count288
+\Hy@abspage=\count287
+\c@Item=\count288
+\c@Hfootnote=\count289
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
@@ -664,10 +665,10 @@ Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
 )
 )
 \pdfm@box=\box59
-\c@Hy@AnnotLevel=\count289
-\HyField@AnnotCount=\count290
-\Fld@listcount=\count291
-\c@bookmark@seq@number=\count292
+\c@Hy@AnnotLevel=\count290
+\HyField@AnnotCount=\count291
+\Fld@listcount=\count292
+\c@bookmark@seq@number=\count293
 
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
@@ -675,102 +676,139 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip74
-) (./Support Vector Machine.aux)
-\openout1 = `"Support Vector Machine.aux"'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
- ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 48.
-
-Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
-(fontspec)             this).
-
-\symlegacymaths=\mathgroup6
-LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 48.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 48.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 48.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 48.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 48.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 48.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 48.
-LaTeX Font Info:    Redeclaring math accent \check on input line 48.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 48.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 48.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 48.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 48.
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 48.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 48.
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 48.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 48.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 48.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 48.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 48.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 48.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 48.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/bx/n on input line 48.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/bx/it on input line 48.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 48.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 48.
-Package lastpage Info: Please have a look at the pageslts package at
-(lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 48.
-\AtBeginShipoutBox=\box60
-
-(d:/software/Latex/latex2018/texmf-dist/tex/latex/graphics/color.sty
+) (d:/software/Latex/latex2018/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
-LaTeX Info: Redefining \color on input line 86.
 
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: xetex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 48.
+(d:/software/Latex/latex2018/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip75
+\subfigcapskip=\skip76
+\subfigcaptopadj=\dimen191
+\subfigbottomskip=\skip77
+\subfigcapmargin=\dimen192
+\subfiglabelskip=\skip78
+\c@subfigure=\count294
+\c@lofdepth=\count295
+\c@subtable=\count296
+\c@lotdepth=\count297
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(d:/software/Latex/latex2018/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip79
+\subfig@bottom=\skip80
+)
+(d:/software/Latex/latex2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/04/16 v5.8 Page Geometry
+\Gm@cnth=\count298
+\Gm@cntv=\count299
+\c@Gm@tempcnt=\count300
+\Gm@bindingoffset=\dimen193
+\Gm@wd@mp=\dimen194
+\Gm@odd@mp=\dimen195
+\Gm@even@mp=\dimen196
+\Gm@layoutwidth=\dimen197
+\Gm@layoutheight=\dimen198
+\Gm@layouthoffset=\dimen199
+\Gm@layoutvoffset=\dimen256
+\Gm@dimlist=\toks25
+)
+(./Support Vector Machine.aux
+
+LaTeX Warning: Label `fig:9' multiply defined.
+
+)
+\openout1 = `"Support Vector Machine.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+ ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 56.
+
+Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 56.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 56.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 56.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 56.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 56.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 56.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 56.
+LaTeX Font Info:    Redeclaring math accent \check on input line 56.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 56.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 56.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 56.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 56.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 56.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 56.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 56.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 56.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 56.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 56.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 56.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 56.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 56.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/lmr/m/n --> TU/lmr/bx/n on input line 56.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/lmr/bx/it on input line 56.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 56.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 56.
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             https://www.ctan.org/pkg/pageslts
+(lastpage)             ! on input line 56.
+\AtBeginShipoutBox=\box60
+Package hyperref Info: Link coloring ON on input line 56.
 
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -778,14 +816,49 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (d:/software/Latex/latex2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count293
+\c@section@level=\count301
 )
-LaTeX Info: Redefining \ref on input line 48.
-LaTeX Info: Redefining \pageref on input line 48.
-LaTeX Info: Redefining \nameref on input line 48.
+LaTeX Info: Redefining \ref on input line 56.
+LaTeX Info: Redefining \pageref on input line 56.
+LaTeX Info: Redefining \nameref on input line 56.
  (./Support Vector Machine.out) (./Support Vector Machine.out)
 \@outlinefile=\write3
 \openout3 = `"Support Vector Machine.out"'.
+
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(90.47955pt, 416.54877pt, 90.47955pt)
+* v-part:(T,H,B)=(72.2698pt, 700.50723pt, 72.2698pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=416.54877pt
+* \textheight=638.63344pt
+* \oddsidemargin=18.20956pt
+* \evensidemargin=18.20956pt
+* \topmargin=-0.00018pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=47.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
 Package fontspec Info: Could not resolve font "KaiTi/BI" (it probably doesn't
@@ -810,16 +883,32 @@ Package fontspec Info: Font family 'KaiTi(0)' created for font 'KaiTi' with
 (fontspec)             <->"KaiTi/OT:script=hani;language=DFLT;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 51.
-
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 51.
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
 
 (d:/software/Latex/latex2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) [1
+
+
+]
+(./Support Vector Machine.toc [1
+
+
+])
+\tf@toc=\write4
+\openout4 = `"Support Vector Machine.toc"'.
+
+ [2]
+第一章
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 71.
+
 
 Package fontspec Info: Could not resolve font "SimHei/BI" (it probably doesn't
 (fontspec)             exist).
@@ -844,31 +933,376 @@ Package fontspec Info: Font family 'SimHei(0)' created for font 'SimHei' with
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 
-(./Support Vector Machine.toc)
-\tf@toc=\write4
-\openout4 = `"Support Vector Machine.toc"'.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 73.
 
- [1
 
-] 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 86.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 99.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+Make it at least 14.49998pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
+
+[1
+
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 136.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+
+ []
+
+[2]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 168.
+
+[3] [4]
+第二章
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 209.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 211.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 220.
+
+File: figures/convex_collection.png Graphic file (type bmp)
+<figures/convex_collection.png>
+[5
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 263.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 264.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 267.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 297.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 298.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 304.
+
+File: figures/perspective_collineation.png Graphic file (type bmp)
+<figures/perspective_collineation.png>
+[6]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 317.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 320.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 321.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 327.
+
+File: figures/segmentation_plane.png Graphic file (type bmp)
+<figures/segmentation_plane.png>
+[7]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 339.
+
+File: figures/the_distance_of_segmentation.png Graphic file (type bmp)
+<figures/the_distance_of_segmentation.png>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 358.
+
+File: figures/hyperplane.png Graphic file (type bmp)
+<figures/hyperplane.png>
+[8]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 378.
+
+File: figures/optimal_segmentation_plane.png Graphic file (type bmp)
+<figures/optimal_segmentation_plane.png>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 405.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 406.
+
+[9]
+File: figures/convex_function.png Graphic file (type bmp)
+<figures/convex_function.png>
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 423.
+
+File: figures/first_derivation_of_convex_function.png Graphic file (type bmp)
+<figures/first_derivation_of_convex_function.png>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 441.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 453.
+
+[10] [11]
+第三章
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 470.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 472.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 513.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 514.
+
+[12
+
+]
+
+LaTeX Font Warning: Font shape `TU/SimHei(0)/bx/n' undefined
+(Font)              using `TU/SimHei(0)/m/n' instead on input line 533.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 533.
+
+File: figures/Lagrange_multiplier.png Graphic file (type bmp)
+<figures/Lagrange_multiplier.png>
+[13]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathgroup' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symoperators' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\nmlimits@' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\limits' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathgroup' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symoperators' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\nmlimits@' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\limits' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\nu' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\geq' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\nu' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 560.
+
+[14]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 620.
+
+[15]
+Overfull \hbox (78.75249pt too wide) in paragraph at lines 671--673
+\TU/SimSun(0)/m/n/12 若 原 始 问 题 和 对 偶 问 题 都 有 最 优 值\TU/lmr/m/n/12 , \TU/SimSun(0
+)/m/n/12 则 $\OML/cmm/m/it/12 d[] \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 L\OT1
+/cmr/m/n/12 (\OML/cmm/m/it/12 x; ^^U; ^^W\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T
+ [] [] \OML/cmm/m/it/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; ^^U; ^^W\OT1/cmr/
+m/n/12 ) =
+ []
+
+[16]
+File: figures/original_function_dual_problem.png Graphic file (type bmp)
+<figures/original_function_dual_problem.png>
+File: figures/dual_function_dual_problem.png Graphic file (type bmp)
+<figures/dual_function_dual_problem.png>
+ [17] [18]
+第四章
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 748.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 749.
+
+
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
-(./Support Vector Machine.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 59.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
+[19
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 751.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 751.
+ (./Support Vector Machine.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 751.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 751.
 Package rerunfilecheck Info: File `"Support Vector Machine".out' has not change
 d.
 (rerunfilecheck)             Checksum: .
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 751.
  ) 
 Here is how much of TeX's memory you used:
- 24423 strings out of 492940
- 494894 string characters out of 6131814
- 558724 words of memory out of 5000000
- 28242 multiletter control sequences out of 15000+600000
- 535595 words of font info for 61 fonts, out of 8000000 for 9000
+ 25387 strings out of 492940
+ 515224 string characters out of 6131814
+ 593713 words of memory out of 5000000
+ 29144 multiletter control sequences out of 15000+600000
+ 545325 words of font info for 113 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 54i,6n,68p,830b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,20n,70p,830b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Support Vector Machine.pdf (1 page).
+Output written on Support Vector Machine.pdf (22 pages).

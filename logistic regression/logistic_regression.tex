@@ -12,6 +12,9 @@
 \usepackage{enumerate} % when need define format to number by myself
 \usepackage[colorlinks,linkcolor=black]{hyperref} % set super link
 
+\usepackage{geometry}
+\geometry{a4paper,top=2.54cm,left=3.18cm,bottom=2.54cm,right=3.18cm,includehead,includefoot}
+
 % \newcommand命令的定义，新的命令
 \newcommand\degree{^\circ}
 \title{\kaishu Logistic Regression Model}
@@ -54,6 +57,7 @@
 	\pagestyle{fancy}
 	\lhead{logistic regerssion model by wzs}                   
 	\rhead{Page \thepage{} of \pageref{LastPage}}
+	\setcounter{page}{1}
 	
 	\section{\quad the exponential family}
 	to work our way up to GLMs, we will begin by defining exponential family distributions. We say that a class of distributions is in the exponential family if it can be written in the form of 
