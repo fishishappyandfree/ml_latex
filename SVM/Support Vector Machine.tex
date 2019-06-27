@@ -746,6 +746,473 @@
 				\end{enumerate}
 				
 	\chapter{\quad SVM}
-		\section{\quad jiange}
+		\thispagestyle{fancy}
+		\section{\quad linear separable support vector machine and hard margin maximization}
+			\subsection{\quad question?} 
+				\begin{figure}[H]
+					\vspace{-0.2cm}  %调整图片与上文的垂直距离
+					\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+					%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+					\centering
+					\includegraphics[scale=0.6]{linear_classifier.png}
+					\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+					\caption{linear classifier}
+					\label{fig:10}
+				\end{figure}
+				
+			\subsection{\quad input data} 
+				\begin{enumerate}
+					\item 假设给定有一个特征空间上的训练数据集 $T = \left\{ (x_1, y_1), (x_2, y_2), ..., (x_N, y_N) \right\}$
+						其中, $x_i \in \boldsymbol{\text{R}}^n, y_i \in \left\{ +1, -1 \right\}, i=1,2,...,N $
+						
+					\item $x_i$ 为第 $i$ 个实例 (若 $n>1$, $x_i$ 为向量)
+					
+					\item $y_i$ 为 $x_i$ 的类标记
+						\begin{enumerate}
+							\item 当 $y = +1$ 时, 称 $x_i$ 为正例
+							
+							\item 当 $y = -1$ 时, 称 $x_i$ 为负例
+						\end{enumerate}
+					
+					\item $(x_i, y_i)$ 称为样本点
+				\end{enumerate}
+
+			\subsection{\quad linear separable support vector machine}
+				\begin{enumerate}
+					\item 给定线性可分训练数据集, 通过 \textcolor{red}{间隔最大化} 得到的分离超平面为
+						\begin{align}
+							y(x) = w^T \phi(x) + b
+						\end{align}
+						相应的分类决策函数 
+						\begin{align}
+							f(x) = sign(w^T \phi(x) + b)
+						\end{align}
+						该决策函数称为线性可分支持向量机
+						
+					\item $\phi(x)$ 是某个确定的特征空间转换函数, 它的作用是将 $x$ 映射到 (更高的)维度
+						\begin{enumerate}
+							\item 最简单直接的 : $\phi(x) = x$
+						\end{enumerate}
+					
+					\item 求解分离超平面问题可以等价为求解相应的 \textcolor{red}{凸二次规划问题}
+				\end{enumerate}
 	
+			\subsection{\quad list symbol}
+				\begin{enumerate}
+					\item 分割平面: $y(x) = w^T \phi(x) + b$
+		
+					\item 训练集: $x_1, x_2, ..., x_n$
+					
+					\item 目标值: $y_1, y_2, ..., y_n, \quad y_i \in \left\{ -1, +1 \right\}$
+					
+					\item 新数据的分类: $sign(y(x))$
+				\end{enumerate}
+			
+			\subsection{\quad derivation target function}
+				\begin{enumerate}
+					\item 根据题设 $y(x) = w^T \phi(x) + b$
+					
+					\item 有: 
+						\begin{align}
+							\left\{ 
+								\begin{matrix}
+									y(x_i) > 0 \Leftrightarrow y_i = +1\\
+									y(x_i) < 0 \Leftrightarrow y_i = -1
+								\end{matrix}
+								\Rightarrow
+								y_i \cdot y(x_i)>0
+							\right.
+						\end{align}
+					
+					\item functional margin and geometric margin
+						\begin{figure}[H]
+							\label{margin}
+							\vspace{-0.2cm}  %调整图片与上文的垂直距离
+							\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+							%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+							\centering
+							\includegraphics[scale=0.6]{functional_and_geometric_margin.png}
+							\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+							\caption{functional margin and geometric margin}
+						\end{figure}
+						\qquad 在图 \ref{margin} 中， 有 A,B,C 三个点, 表示3个实例, 均在分离超平面的正类侧, 预测它们的类, 点A距分离超平面较远, 若预测该点为正类, 就比较确信预测是正确的, 点C距分离超平面较劲, 若预测该点为正类就不么确信, 点B介于点A与C之间, 预测其为正类的确信度也在A与C之间
+						\begin{itemize}
+							\item \textcolor{red}{函数间隔}： 一般来说, 一个点距离分离超平面的远近可以表示分类预测的确信程度. 在超平面 $w^T \phi(x) + b = 0$ 确定的情况下, $|w^T \phi(x) + b|$ 能够相对地表示点 x 距离超平面的远近, 而 $w^T \phi(x) + b$ 的符号与类标记 y 的符号是否一致能够表示分类是否正确. 所以可用量 $y_i \cdot (w^T \cdot \phi(x_i) +_b$ 来表示分类的正确性及确信度.
+						
+							定义超平面 $(w, b)$ 关于样本点 $(x_i, y_i)$ 的函数间隔为
+								\begin{align}
+									\hat{\gamma}_i = y_i (w \cdot x_i + b)
+ 								\end{align}
+						
+							\item \textcolor{red}{几何间隔}: 函数间隔可以表示分类预测的正确性及确信度. 但是选择分离超平面时, 只有函数间隔还不够, 因为只要成比例的缩放 $w$ 和 $b$， 例如将它们改为 $2w$ 和 $2b$, 超平面并没有改变, 但函数间隔却成为原来的 2 倍, 这一事实启示我们, 可以对分离超平面的法向量 $\boldsymbol{w}$ 加某些约束, 如规范化, $\parallel w \parallel = 1$, 使得间隔是确定的. 这是函数间隔称为几何间隔.
+							
+							$w, b$ 等比例缩放, 则 $y_i*y$ 的值同样缩放, 从而：
+							\begin{align}
+								\gamma_i = \frac{y_i \cdot y(x_i)}{\parallel w \parallel} =
+								\frac{y_i \cdot (w^T \cdot \phi(x_i) +_b)}{\parallel w \parallel}
+							\end{align}
+						\end{itemize}
+					
+					\item maximum margin to select separable hyperplane
+						\begin{itemize}
+							\item assume minimum functional margin and geometric margin 
+							
+								定义函数间隔平面 $(w, b)$ 关于 $T$ 中所有样本点 $(x_i, y_i)$ 的函数间隔之最小值, 即
+								\begin{align}
+								\hat{\gamma} = \min\limits_{i=1,...,N} \hat{\gamma_i}
+								\end{align}
+								
+								定义几何间隔平面 $(w, b)$ 关于 $T$ 中所有样本点 $(x_i, y_i)$ 的几何间隔之最小值, 即
+								\begin{align}
+									\gamma = \min\limits_{i=1,...,N} \gamma_i
+								\end{align}
+							
+							\item original target function
+								\begin{align}
+								&	\mathop{\arg\max}\limits_{w, b} \gamma
+									=    \mathop{\arg\max}\limits_{w, b} 		\frac{\hat{\gamma}}{\parallel w \parallel}
+									\Rightarrow\\
+								&	\mathop{\arg\max}\limits_{w,b}
+									 \left\{
+										\frac{1}{\parallel w \parallel} \min\limits_{i}
+										\left[ 
+											y_i \cdot (w^T \cdot \phi(x_i) + b) 
+										\right]
+									\right\}\\
+									&\text{s.t.} \quad \frac{y_i \cdot (w^T \cdot \phi(x_i) +_b)}{\parallel w \parallel} \geq \gamma
+								\end{align}
+								\begin{figure}[H]
+									\vspace{-0.3cm}  %调整图片与上文的垂直距离
+									\setlength{\abovecaptionskip}{-0.05cm}   %调整图片标题与图距离
+									%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+									\centering
+									\subfigure[many optional hyperplane]{\includegraphics[height=5cm,width=6cm]{dataset.png}}
+									%scale=0.6, height=4cm,width=4cm
+									\qquad
+									\subfigure[margin separable hyperplane]{\includegraphics[height=5cm,width=6cm]{margin_separable_hyperplane.png}}
+									\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+									\caption{maximum margin}
+									\label{fig:12}
+								\end{figure}
+							
+							\item optimal problem
+							
+								\qquad 	\textcolor{red}{函数间隔 $\hat{\gamma} = y (w \cdot x + b)$ 不影响最优化问题的解.}  事实上, 假设将 $w$ 和 $b$ 按比例改变为 $\lambda w$ $\lambda b$, 这时函数间隔成为 $\lambda \hat{\gamma}$.
+								
+								\qquad 函数间隔的改变对上面最优化问题的不等式约束没有影响, 
+								对目标函数的优化也没有影响. 即它产生一个等价的优化问题. 
+								
+								\qquad	取函数间隔最小值 $\hat{\gamma} = 1$. 将 $\hat{\gamma} = 1$ 代入上面的最优化问题, 注意到 最大化 $\frac{1}{\parallel w \parallel}$ 和 最小化 $\frac{1}{2} \parallel w \parallel ^2$ 是等价的. 则得到下面的 \textcolor{red}{线性可分支持向量机} 的最优化问题:
+									\begin{align}
+										&\min\limits_{w, b} \quad \frac{1}{2} \parallel w \parallel ^2 \\
+										&\text{s.t.} \quad y_i(w \cdot x_i + b) - 1 \geq 0, \quad i=1,2,...,N
+									\end{align}
+								\qquad 这是一个凸二次规划 (convex quadratic programming) 问题 :
+								目标函数 $f(x)$ 是二次函数且约束函数 $g_i(w)$ 是仿射函数时, 约束最优化问题 (凸优化问题) 成为凸二次规划问题
+						\end{itemize}
+					
+					\item dual algorithm
+						\begin{enumerate}
+							\item Lagrange multiplier method to build Lagrange function
+								\begin{align}
+									\begin{split}
+										L(w, b, \alpha) = \frac{1}{2} \parallel w \parallel ^2 - \sum\limits_{i=1}^{n} \alpha_i (y_i (w^T \cdot \phi(x_i) + b) - 1)
+									\end{split} \label{Lagrange_function}
+								\end{align}
+								among, $\alpha = (\alpha_1, \alpha_2, ..., \alpha_N)^T$ is Lagrange multiplier vector.
+								
+							\item 原问题是极小极大问题 $$\min\limits_{w,b} \max\limits_{\alpha} L(w, b, \alpha)$$
+							原始问题的对偶问题, 是极大极小问题$$\max\limits_{\alpha} \min\limits_{w,b} L(w,b,\alpha)$$
+							
+							\item 得到对偶问题的解
+								\begin{enumerate}[(1)]
+									\item 求 $\min\limits_{w,b} L(w,b,\alpha)$\\
+										将拉格朗日函数 $L(w,b,\alpha)$ 分别对 $w,b$ 求偏导数并令其等于0.
+										\begin{align}
+											\nabla_w L(w,b,\alpha) &= w - \sum_{i=1}^{N} \alpha_i y_i x_i= 0\\
+											\nabla_b L(w,b,\alpha) &= \sum_{i=1}^{N} \alpha_i y_i = 0\\
+											\text{得}\\
+											\begin{split}
+												w &= \sum_{i=1}^{N} \alpha_i x_i y_i
+											\end{split} \label{derivation_w}\\
+											\begin{split}
+											\sum_{i=1}^{N} \alpha_i y_i &= 0
+											\end{split}
+											\label{derivation_y}
+										\end{align}
+										
+									\item 将式 \ref{derivation_w} 代入Lagrange 函数 	\ref{Lagrange_function}, 并利用式 \ref{derivation_y}, 即得
+										\begin{align}
+											L(w,b,\alpha) &= \frac{1}{2} \parallel w \parallel ^2 - \sum_{i=1}^{n} \alpha_i (y_i(w^T \cdot \phi(x_i) + b) - 1)\\
+											&= \frac{1}{2} w^T w - w^T \sum_{i=1}^{n} \alpha_i y_i \phi(x_i) - b\sum_{i=1}^{n} \alpha_i y_i + \sum_{i=1}^{n}\alpha_i\\
+											&=\frac{1}{2}w^T \sum_{i=1}^{n}\alpha_i y_i \phi(x_i) - w^T \sum_{i=1}^{n}\alpha_i y_i \phi(x_i) - b\cdot 0 + \sum_{i-1}^{n}\alpha_i\\
+											&= \sum_{i=1}^{n}\alpha_i - \frac{1}{2}\left( \sum_{i=1}^{n} \alpha_i y_i \phi(x_i) \right)^T \sum_{i=1}^{n}\alpha_i y_i \phi(x_i)\\
+											&= \sum_{i=1}^{n}\alpha_i - \frac{1}{2}\sum_{i,j=1}^{n}\alpha_i \alpha_j y_i y_j \phi^T(x_i) \phi(x_j)				
+										\end{align}
+										即
+										\begin{align}
+											\min\limits_{w,b} L(w,b,\alpha) = -\frac{1}{2} \sum_{i=1}^{N}\sum_{i=1}^{N}\alpha_i \alpha_j y_i y_j \phi^T(x_i) \phi(x_j) + \sum_{i=1}^{N}\alpha_i
+										\end{align}
+										
+									\item 求 $\min\limits_{w,b} L(w,b,\alpha)$ 对 $\alpha$ 的极大, 即是对偶问题
+										\begin{align}
+											&\max\limits_{\alpha} \quad \sum_{i=1}^{n} \alpha_i - \frac{1}{2} \sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i \alpha_j y_i y_j \left( \phi(x_i) \phi(x_j) \right)\\
+											&\text{s.t.} \quad \sum_{i=1}^{n} \alpha_i y_i =0\\
+											&\alpha_i \geq 0, \quad i=1,2,...,n
+										\end{align}
+										
+									\item 整理目标函数: 添加负号
+										\begin{align}
+											&\min\limits_{\alpha} \quad \frac{1}{2} \sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i \alpha_j y_i y_j \left( \phi(x_i) \phi(x_j) \right) - \sum_{i=1}^{n} \alpha_i \\
+											&\text{s.t.} \quad \sum_{i=1}^{n} \alpha_i y_i =0\\
+											&\alpha_i \geq 0, \quad i=1,2,...,n
+										\end{align}
+								\end{enumerate}
+						\end{enumerate}						
+				\end{enumerate}
+			
+			\subsection{\quad Linear divisible support Vector Machine Learning algorithm}
+				\begin{enumerate}
+					\item 构造并求解约束最优化问题
+						\begin{align}
+							&\min\limits_{\alpha} \quad \frac{1}{2} \sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i \alpha_j y_i y_j \left( \phi(x_i) \phi(x_j) \right) - \sum_{i=1}^{n} \alpha_i \\
+							&\text{s.t.} \quad \sum_{i=1}^{n} \alpha_i y_i =0\\
+							&\alpha_i \geq 0, \quad i=1,2,...,n
+						\end{align}
+						
+					\item 求得最优解 $\alpha^*$, $\alpha^* = (\alpha_1^*,\alpha_1^*,...,\alpha_1^* )^T$
+					
+					\item 计算
+						\begin{align}
+							w^* &= \sum_{i=1}^{N} \alpha_i^* y_i \phi(x_i)\\
+							b^* &= y_i - \sum_{i=1}^{N} \alpha_i^* y_i (\phi(x_i) \cdot \phi(x_j))
+						\end{align}
+						
+					\item 求得分离超平面
+						\begin{align}
+							w^* \phi(x) + b^* = 0
+						\end{align}
+						
+					\item 分类决策函数
+						\begin{align}
+							f(x) = sign(w^* \phi(x) + b^*)
+						\end{align}
+						
+					\item example
+						\begin{enumerate}[]
+							\item 						
+								\begin{figure}[H]
+									%\label{margin}
+									\vspace{-0.2cm}  %调整图片与上文的垂直距离
+									\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+									%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+									\centering
+									\includegraphics[scale=0.7]{separable_dataset_svm_example1.png}
+									\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+									%\caption{functional margin and geometric margin}
+								\end{figure}
+							
+							\item 
+								\begin{figure}[H]
+									%\label{margin}
+									\vspace{-0.2cm}  %调整图片与上文的垂直距离
+									\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+									%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+									\centering
+									\includegraphics[scale=0.7]{separable_dataset_svm_example2.png}
+									\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+									%\caption{functional margin and geometric margin}
+								\end{figure}
+							
+							\item 
+								\begin{figure}[H]
+									\label{fig:13}
+									\vspace{-0.2cm}  %调整图片与上文的垂直距离
+									\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+									%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+									\centering
+									\includegraphics[scale=0.7]{separable_dataset_svm_example3.png}
+									\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+									\caption{the example of solve lagest margin separable hyperplane with svm method}
+								\end{figure}							
+						\end{enumerate}
+				\end{enumerate}
+			
+		\section{\quad linear supprot vector machine and soft margin maximization}
+			\subsection{\quad concept}
+				\begin{enumerate}
+					\item 不一定分类完全正确的超平面就是最好的
+					
+					\item 样本数据本身线性不可分
+					
+					\item picture
+						\begin{figure}[H]
+							\label{non_separable_dataset}
+							\vspace{-0.2cm}  %调整图片与上文的垂直距离
+							\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+							%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+							\centering
+							\includegraphics[scale=0.7]{non_separable_dataset.png}
+							\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+							\caption{non separable dataset}
+						\end{figure}
+				\end{enumerate}
+			
+			\subsection{\quad derivation target function}
+				\begin{enumerate}
+					\item 若数据线性不可分, 则增加松弛因子 $\xi \geq 0$, 使函数间隔加上松弛变量大于等于1. 这样, 约束条件变成
+						\begin{align}
+							y_i (w \cdot x_i + b) \geq 1 - \xi
+						\end{align}
+						
+					\item target function with adding slack variable $\xi$:
+						\begin{align}
+							\min\limits_{w,b} \frac{1}{2} \parallel w \parallel ^2 + C \sum_{i=1}^{N} \xi_i
+						\end{align}
+						
+					\item this moment, the target function of linear svm
+						\begin{align}
+							&\min\limits_{w,b,\xi} \quad \frac{1}{2} \parallel w \parallel ^2 + C \sum_{i=1}^{N} \xi_i\\
+							&\text{s.t.} \quad y_i(w \cdot x_i + b) \geq 1 - \xi_i, \quad i=1,2,...,n\\
+							&\xi_i \geq 0, \quad i=1,2,...,n
+						\end{align}
+				\end{enumerate}
+			
+			\subsection{\quad dual property}
+				\begin{enumerate}
+					\item Lagrange 函数
+						\begin{align}
+							\begin{split}
+								L(w,b,\xi,\alpha,\mu) = \frac{1}{2} \parallel w \parallel^2 + C\sum_{i=1}^{n}\xi_i - \sum_{i=1}^{n}\alpha_i(y_i(w \cdot x_i + b) - 1 + \xi_i) - \sum_{i=1}^{n}\mu_i \xi_i
+							\end{split} \label{Lagrange_function_linear_svm}
+						\end{align}
+						
+					\item 对 $w,b,\xi$ 求偏导
+						\begin{align}
+							\begin{split}
+								&\frac{\partial L}{\partial w} = 0 \Rightarrow w = \sum_{i=1}^{n} \alpha_i y_i \phi(x_n) 
+							\end{split} \label{partial_w_linear_svm}\\
+							\begin{split}
+								&\frac{\partial L}{\partial b} = 0 \Rightarrow 0 = \sum_{i=1}^{n} \alpha_i y_i 
+							\end{split} \label{partial_b_linear_svm}\\
+							\begin{split}
+								&\frac{\partial L}{\partial \xi} = 0 \Rightarrow C - \alpha_i - \mu_i = 0 
+							\end{split} \label{partial_xi_linear_svm}
+						\end{align}
+						
+					\item 将式 \ref{partial_w_linear_svm} 、式 \ref{partial_b_linear_svm} 、式 \ref{partial_xi_linear_svm} 代入式 \ref{Lagrange_function_linear_svm} 中, 得到
+						\begin{align}
+							\begin{split}
+								\min\limits{w,b,\xi} L(w,b,\xi,\alpha,\mu) = - \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i\alpha_j y_i y_j (x_i \cdot x_j) + \sum_{i=1}^{n}\alpha_i
+							\end{split} \label{dual_Lagrange_function_linear_svm}
+						\end{align}
+						
+					\item 对上式 \ref{dual_Lagrange_function_linear_svm} 求关于 $\alpha$ 的极大, 得到
+						\begin{align}
+							\begin{split}
+								\max\limits_{\alpha} \quad &- \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i\alpha_j y_i y_j (x_i \cdot x_j) + \sum_{i=1}^{n}\alpha_i 
+							\end{split} \label{maximum_alpha}
+							\\
+							\begin{split}
+								\text{s.t.} \quad &\sum_{i=1}^{n} \alpha_i y_i = 0 \label{alpha_equal_maximum_alpha_restrict}
+							\end{split}
+							 \\
+							\begin{split}
+								&C -\alpha_i -\mu_i = 0 \label{alpha_mu_equal_maximum_alpha_restrict}
+							\end{split}
+							 \\
+							\begin{split}
+								&\alpha_i \geq 0 \label{domain_alpha}
+							\end{split}
+							\\
+							\begin{split}
+								&\mu_i \geq 0, \quad i=1,2,..,n \label{domain_mu}
+							\end{split}	
+						\end{align}
+						
+					\item 将对偶问题 \ref{maximum_alpha} $\sim$ \ref{domain_mu} 进行变换: 利用等式约束 \ref{alpha_mu_equal_maximum_alpha_restrict} 消去 $\mu_i$, 从而只留下变量 $\alpha_i$, 并将约束 \ref{alpha_mu_equal_maximum_alpha_restrict} $\sim$ \ref{domain_mu} 写成
+						\begin{align}
+							0 \leq \alpha_i \leq C
+						\end{align}
+						
+					\item 整理, 得到对偶问题:
+						\begin{align}
+							\min\limits_{\alpha} \quad & \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i\alpha_j y_i y_j (x_i \cdot x_j) - \sum_{i=1}^{n}\alpha_i \\
+							\text{s.t.} \quad &\sum_{i=1}^{n} \alpha_i y_i = 0\\
+							&0 \leq \alpha_i \leq C, \quad i=1,2,...,n
+						\end{align}
+				\end{enumerate}
+			
+			\subsection{\quad Linear support vector machine learning algorithm}
+				\begin{enumerate}
+					\item 构造并求解约束最优化问题
+						\begin{align}
+							\min\limits_{\alpha} \quad & \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i\alpha_j y_i y_j (x_i \cdot x_j) - \sum_{i=1}^{n}\alpha_i \\
+							\text{s.t.} \quad &\sum_{i=1}^{n} \alpha_i y_i = 0\\
+							&0 \leq \alpha_i \leq C, \quad i=1,2,...,n
+						\end{align}
+						
+					\item 求得最优解 $\alpha^*$, $\alpha^* = (\alpha_1^*,\alpha_2^*,...,\alpha_n^*)^T$
+					
+					\item 计算
+						\begin{align}
+							w^* = \sum_{i=1}^{n} \alpha_i^* y_i x_i
+						\end{align}
+						计算 b 的值有两种方式：
+						\begin{itemize}
+							\item 选择 $\alpha^*$ 的一个分量 $\alpha_j^*$ 适合条件 $0 < \alpha_j^* < C$, 计算
+								\begin{align}
+									b^* = y_j - \sum_{i=1}^{n}y_i \alpha_i^*(x_i \cdot x_j)
+								\end{align}
+							
+							\item 实践中往往取支持向量的所有值取平均, 作为 $b^*$
+								\begin{align}
+									b^* = \frac{\max\limits_{i: y_i=-1} w^* \cdot x_i + \min\limits_{i: y_i=1} w^* \cdot x_i}{2}
+								\end{align}
+						\end{itemize}
+						
+					\item 求得分离超平面
+						\begin{align}
+							w^* x + b^* = 0
+						\end{align}
+						
+					\item 分类决策函数
+						\begin{align}
+							f(x) = sign(w^* x + b^*)
+						\end{align}
+				\end{enumerate}
+			
+			\subsection{\quad support vector}
+				\begin{enumerate}
+					\item 
+				\end{enumerate}
+			
+			\subsection{\quad loss function}
+				\begin{enumerate}
+					\item
+				\end{enumerate}
+			
+		\section{\quad kernel function}
+		
+		\section{\quad sequential minimal optimization algorithm}
+			\subsection{\quad concept}
+				\begin{enumerate}
+					\item 用于 SVM 中系数的求解算法
+					
+					\item 场合: 有多个 Lagrange multiplier
+					
+					\item 原理: 每次只选择其中两个乘子做优化, 其他因子认为是常数.
+						\begin{itemize}
+							\item 将 N 个解问题, 转换成两个变量的求解问题: 并且目标函数是凸的
+						\end{itemize}
+				\end{enumerate}
+			
+			\subsection{\quad process}
+				\begin{enumerate}
+					\item 考察目标函数, 假设 $\alpha_1$ 和 $\alpha_2$ 是变量, 其他是定值:
+						\begin{align}
+							
+						\end{align}
+
+				\end{enumerate}
 \end{document}

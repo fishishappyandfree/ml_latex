@@ -34,4 +34,16 @@
 \contentsline {subsection}{\numberline {3.2.3} Lagrange 函数的极小极大最优值 $\qopname \relax m{min}\limits _x\qopname \relax m{max}\limits _{\lambda , \nu : \lambda _i \geq 0} L(x, \lambda , \nu )$ 和 原问题的最优值 $p^*$}{14}{subsection.3.2.3}% 
 \contentsline {subsection}{\numberline {3.2.4}\hskip 1em\relax Lagrange 对偶函数 (dual function)}{15}{subsection.3.2.4}% 
 \contentsline {chapter}{\numberline {第四章\hspace {.3em}}\hskip 1em\relax SVM}{19}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}\hskip 1em\relax jiange}{19}{section.4.1}% 
+\contentsline {section}{\numberline {4.1}\hskip 1em\relax linear separable support vector machine and hard margin maximization}{19}{section.4.1}% 
+\contentsline {subsection}{\numberline {4.1.1}\hskip 1em\relax question?}{19}{subsection.4.1.1}% 
+\contentsline {subsection}{\numberline {4.1.2}\hskip 1em\relax input data}{19}{subsection.4.1.2}% 
+\contentsline {subsection}{\numberline {4.1.3}\hskip 1em\relax linear separable support vector machine}{20}{subsection.4.1.3}% 
+\contentsline {subsection}{\numberline {4.1.4}\hskip 1em\relax list symbol}{20}{subsection.4.1.4}% 
+\contentsline {subsection}{\numberline {4.1.5}\hskip 1em\relax derivation target function}{20}{subsection.4.1.5}% 
+\contentsline {subsection}{\numberline {4.1.6}\hskip 1em\relax Linear divisible support Vector Machine Learning algorithm}{25}{subsection.4.1.6}% 
+\contentsline {section}{\numberline {4.2}\hskip 1em\relax linear supprot vector machine and soft margin maximization}{27}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}\hskip 1em\relax concept}{27}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}\hskip 1em\relax derivation target function}{28}{subsection.4.2.2}% 
+\contentsline {subsection}{\numberline {4.2.3}\hskip 1em\relax dual property}{28}{subsection.4.2.3}% 
+\contentsline {subsection}{\numberline {4.2.4}\hskip 1em\relax Linear support vector machine learning algorithm}{29}{subsection.4.2.4}% 
+\contentsline {subsection}{\numberline {4.2.5}\hskip 1em\relax loss function}{30}{subsection.4.2.5}% 

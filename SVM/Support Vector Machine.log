@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.7)  25 JUN 2019 16:28
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.7)  27 JUN 2019 21:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1272,18 +1272,119 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 12.0pt
-(hyperref)                removed on input line 749.
+(hyperref)                removed on input line 750.
 
 
-AED: lastpage setting LastPage
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 751.
+
+File: figures/linear_classifier.png Graphic file (type bmp)
+<figures/linear_classifier.png>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 763.
+
+
+Overfull \hbox (9.5902pt too wide) in paragraph at lines 765--767
+[]\TU/SimSun(0)/m/n/12 假 设 给 定 有 一 个 特 征 空 间 上 的 训 练 数 据 集 $\OML/cmm/m/it/12 T 
+\OT1/cmr/m/n/12 = []$
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 780.
+
 [19
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 751.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 751.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 800.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 811.
+
+File: figures/functional_and_geometric_margin.png Graphic file (type bmp)
+<figures/functional_and_geometric_margin.png>
+[20] [21]
+File: figures/dataset.png Graphic file (type bmp)
+<figures/dataset.png>
+File: figures/margin_separable_hyperplane.png Graphic file (type bmp)
+<figures/margin_separable_hyperplane.png>
+ [22] [23]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 974.
+
+[24]
+
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 1002.
+
+File: figures/separable_dataset_svm_example1.png Graphic file (type bmp)
+<figures/separable_dataset_svm_example1.png>
+[25]
+File: figures/separable_dataset_svm_example2.png Graphic file (type bmp)
+<figures/separable_dataset_svm_example2.png>
+File: figures/separable_dataset_svm_example3.png Graphic file (type bmp)
+<figures/separable_dataset_svm_example3.png>
+ [26]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1041.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1042.
+
+File: figures/non_separable_dataset.png Graphic file (type bmp)
+<figures/non_separable_dataset.png>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1061.
+
+[27]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1081.
+
+
+Overfull \hbox (12.56464pt too wide) detected at line 1088
+[]
+ []
+
+[28]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1146.
+
+[29]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1185.
+
+
+AED: lastpage setting LastPage
+[30]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1189.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1189.
  (./Support Vector Machine.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 751.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 751.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1189.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1189.
+
 Package rerunfilecheck Info: File `"Support Vector Machine".out' has not change
 d.
 (rerunfilecheck)             Checksum: .
@@ -1294,15 +1395,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 751.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1189.
  ) 
 Here is how much of TeX's memory you used:
- 25387 strings out of 492940
- 515224 string characters out of 6131814
- 593713 words of memory out of 5000000
- 29144 multiletter control sequences out of 15000+600000
+ 25440 strings out of 492940
+ 516806 string characters out of 6131814
+ 598439 words of memory out of 5000000
+ 29189 multiletter control sequences out of 15000+600000
  545325 words of font info for 113 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 54i,20n,70p,830b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,20n,70p,830b,647s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Support Vector Machine.pdf (22 pages).
+Output written on Support Vector Machine.pdf (33 pages).
