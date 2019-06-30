@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.7)  27 JUN 2019 21:44
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.7)  30 JUN 2019 23:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -898,11 +898,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (./Support Vector Machine.toc [1
 
 
-])
+] [2])
 \tf@toc=\write4
 \openout4 = `"Support Vector Machine.toc"'.
 
- [2]
+ [3]
 第一章
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1321,12 +1321,12 @@ File: figures/margin_separable_hyperplane.png Graphic file (type bmp)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 12.0pt
-(hyperref)                removed on input line 974.
+(hyperref)                removed on input line 976.
 
 [24]
 
 LaTeX Warning: The counter will not be printed.
-             The label is:  on input line 1002.
+             The label is:  on input line 1004.
 
 File: figures/separable_dataset_svm_example1.png Graphic file (type bmp)
 <figures/separable_dataset_svm_example1.png>
@@ -1339,28 +1339,28 @@ File: figures/separable_dataset_svm_example3.png Graphic file (type bmp)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 12.0pt
-(hyperref)                removed on input line 1041.
+(hyperref)                removed on input line 1043.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 12.0pt
-(hyperref)                removed on input line 1042.
+(hyperref)                removed on input line 1044.
 
 File: figures/non_separable_dataset.png Graphic file (type bmp)
 <figures/non_separable_dataset.png>
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 12.0pt
-(hyperref)                removed on input line 1061.
+(hyperref)                removed on input line 1063.
 
 [27]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 12.0pt
-(hyperref)                removed on input line 1081.
+(hyperref)                removed on input line 1083.
 
 
-Overfull \hbox (12.56464pt too wide) detected at line 1088
+Overfull \hbox (12.56464pt too wide) detected at line 1090
 []
  []
 
@@ -1368,22 +1368,144 @@ Overfull \hbox (12.56464pt too wide) detected at line 1088
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 12.0pt
-(hyperref)                removed on input line 1146.
+(hyperref)                removed on input line 1148.
 
 [29]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 12.0pt
-(hyperref)                removed on input line 1185.
+(hyperref)                removed on input line 1193.
 
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1215.
+
+File: figures/support_vector_soft_margin_linear_svm.png Graphic file (type bmp)
+
+<figures/support_vector_soft_margin_linear_svm.png>
+[30] [31]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1268.
+
+File: figures/three_surrogate_loss_function.png Graphic file (type bmp)
+<figures/three_surrogate_loss_function.png>
+[32]
+File: figures/hinge_loss_function.png Graphic file (type bmp)
+<figures/hinge_loss_function.png>
+ [33]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1359.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1371.
+
+[34]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1380.
+
+File: figures/reflect_kernel_function.png Graphic file (type bmp)
+<figures/reflect_kernel_function.png>
+[35] [36]
+
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 1481.
+
+File: figures/concept_gussian_kernel_function.png Graphic file (type bmp)
+<figures/concept_gussian_kernel_function.png>
+[37]
+File: figures/theory_gussian_kernel_function.png Graphic file (type bmp)
+<figures/theory_gussian_kernel_function.png>
+File: figures/result_gussian_kernel_function.png Graphic file (type bmp)
+<figures/result_gussian_kernel_function.png>
+
+Overfull \hbox (7.78732pt too wide) in paragraph at lines 1511--1516
+ []\TU/lmr/m/n/12   [] 
+ []
+
+[38] [39]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1540.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1541.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 12.0pt
+(hyperref)                removed on input line 1553.
+
+[40]
+File: figures/two_variable_optimization.png Graphic file (type bmp)
+<figures/two_variable_optimization.png>
+File: figures/y_1_not_equal_y_2_smo.png Graphic file (type bmp)
+<figures/y_1_not_equal_y_2_smo.png>
+ [41]
+File: figures/y_1_equal_y_2_smo.png Graphic file (type bmp)
+<figures/y_1_equal_y_2_smo.png>
+ [42]
+
+Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "FangSong/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "FangSong/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
+(fontspec)             with options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"FangSong/OT:script=hani;language=DFLT;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+Overfull \hbox (13.07895pt too wide) in paragraph at lines 1677--1683
+\TU/SimSun(0)/m/n/12 上 述 公 式 具 体 证 明 过 程 看 博 客 [][]$[][][][][] [] [] [] [][][][
+] [] [][][][] [] [][][] [] [] [] [][][][] [] [] [] [][][][][][][] []
+ []
+
+
+Overfull \hbox (36.27475pt too wide) in paragraph at lines 1677--1683
+[][] [] [][] [] [][][][][][][] [] [][][][]$[][] [][]$[][][][][] [] [] [] [][][]
+[] [] [][][][] [] [][][] [] [][][] [] [][][][][][][] [] [][][][][][][] [] [][][
+][][][][] []
+ []
+
+[43]
+File: figures/update_alpha_smo_summary.png Graphic file (type bmp)
+<figures/update_alpha_smo_summary.png>
+ [44]
+File: figures/detail_update_alpha_smo_summary.png Graphic file (type bmp)
+<figures/detail_update_alpha_smo_summary.png>
+ [45] 
 AED: lastpage setting LastPage
-[30]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1189.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1189.
+[46]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1792.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1792.
  (./Support Vector Machine.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1189.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1189.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1792.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1792.
 
 Package rerunfilecheck Info: File `"Support Vector Machine".out' has not change
 d.
@@ -1395,15 +1517,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1189.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1792.
  ) 
 Here is how much of TeX's memory you used:
- 25440 strings out of 492940
- 516806 string characters out of 6131814
- 598439 words of memory out of 5000000
- 29189 multiletter control sequences out of 15000+600000
- 545325 words of font info for 113 fonts, out of 8000000 for 9000
+ 25560 strings out of 492940
+ 521423 string characters out of 6131814
+ 601141 words of memory out of 5000000
+ 29285 multiletter control sequences out of 15000+600000
+ 545365 words of font info for 118 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 54i,20n,70p,830b,647s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,20n,70p,830b,722s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Support Vector Machine.pdf (33 pages).
+Output written on Support Vector Machine.pdf (50 pages).

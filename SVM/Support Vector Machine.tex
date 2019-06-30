@@ -826,7 +826,6 @@
 					
 					\item functional margin and geometric margin
 						\begin{figure}[H]
-							\label{margin}
 							\vspace{-0.2cm}  %调整图片与上文的垂直距离
 							\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
 							%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
@@ -834,6 +833,7 @@
 							\includegraphics[scale=0.6]{functional_and_geometric_margin.png}
 							\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
 							\caption{functional margin and geometric margin}
+							\label{margin}
 						\end{figure}
 						\qquad 在图 \ref{margin} 中， 有 A,B,C 三个点, 表示3个实例, 均在分离超平面的正类侧, 预测它们的类, 点A距分离超平面较远, 若预测该点为正类, 就比较确信预测是正确的, 点C距分离超平面较劲, 若预测该点为正类就不么确信, 点B介于点A与C之间, 预测其为正类的确信度也在A与C之间
 						\begin{itemize}
@@ -904,7 +904,9 @@
 								
 								\qquad	取函数间隔最小值 $\hat{\gamma} = 1$. 将 $\hat{\gamma} = 1$ 代入上面的最优化问题, 注意到 最大化 $\frac{1}{\parallel w \parallel}$ 和 最小化 $\frac{1}{2} \parallel w \parallel ^2$ 是等价的. 则得到下面的 \textcolor{red}{线性可分支持向量机} 的最优化问题:
 									\begin{align}
-										&\min\limits_{w, b} \quad \frac{1}{2} \parallel w \parallel ^2 \\
+										\begin{split}
+											&\min\limits_{w, b} \quad \frac{1}{2} \parallel w \parallel ^2
+										\end{split} \label{basic_form_svm}\\
 										&\text{s.t.} \quad y_i(w \cdot x_i + b) - 1 \geq 0, \quad i=1,2,...,N
 									\end{align}
 								\qquad 这是一个凸二次规划 (convex quadratic programming) 问题 :
@@ -1147,9 +1149,15 @@
 				\begin{enumerate}
 					\item 构造并求解约束最优化问题
 						\begin{align}
-							\min\limits_{\alpha} \quad & \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i\alpha_j y_i y_j (x_i \cdot x_j) - \sum_{i=1}^{n}\alpha_i \\
-							\text{s.t.} \quad &\sum_{i=1}^{n} \alpha_i y_i = 0\\
-							&0 \leq \alpha_i \leq C, \quad i=1,2,...,n
+							\begin{split}
+								\min\limits_{\alpha} \quad & \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i\alpha_j y_i y_j (x_i \cdot x_j) - \sum_{i=1}^{n}\alpha_i
+							\end{split} \label{target_function_linear_svm} \\
+							\begin{split}
+								\text{s.t.} \quad &\sum_{i=1}^{n} \alpha_i y_i = 0
+							\end{split} \label{equal_restrict_linear_svm} \\
+							\begin{split}
+								&0 \leq \alpha_i \leq C, \quad i=1,2,...,n
+							\end{split} \label{alpha_restrict_linear_svm}
 						\end{align}
 						
 					\item 求得最优解 $\alpha^*$, $\alpha^* = (\alpha_1^*,\alpha_2^*,...,\alpha_n^*)^T$
@@ -1182,18 +1190,353 @@
 						\end{align}
 				\end{enumerate}
 			
+			\subsection{\quad KKT of soft margin}
+				\begin{align}
+					\nabla_w L(w^*, b^*, \xi^*, \alpha^*, \mu^*) &= w^* - \sum_{i=1}^{N} \alpha_i^* y_i x_i = 0 \\
+					\nabla_b L(w^*, b^*, \xi^*, \alpha^*, \mu^*) &= -\sum_{i=1}^{N} \alpha_i^* y_i = 0 \\
+					\nabla_\xi L(w^*, b^*, \xi^*, \alpha^*, \mu^*) &= C - \alpha^* - \mu^* = 0 \\
+					\begin{split}
+						\alpha_i^* (y_i(w^* \cdot x_i + b^*)& - 1 + \xi_i^*) = 0
+					\end{split} \label{alpha_euqal_restrict_kkt_soft_margin}
+					\\
+					\begin{split}
+						\mu_i^* \xi_i^* &= 0
+					\end{split} \label{xi_equal_restrict_kkt_soft_margin}
+					\\
+					\begin{split}
+						y_i(w^* x_i + b^*) &- 1 + \xi^* \geq = 0
+					\end{split} \label{not_equal_restrict_kkt_soft_margin}
+					\\
+					\xi_i^* &\geq 0\\
+					\alpha_i^* &\geq 0\\
+					\mu_i^* &\geq 0, \quad i=1,2,...,N
+				\end{align}
+			
 			\subsection{\quad support vector}
 				\begin{enumerate}
-					\item 
+					\item 在线性不可分的情况下, 将对偶问题 \ref{target_function_linear_svm} $\sim$ \ref{alpha_restrict_linear_svm} 的解 $\alpha^* = (\alpha_1^*,\alpha_2^*,...,\alpha_n^*)^T$ 中对应于 $\alpha_i^* > 0$ 的样本点 $(x_i, y_i)$ 的实例 $x_i$ 称为支持向量(软间隔的支持向量). 
+						\begin{figure}[H]
+							\label{support_vector_soft_margin_linear_svm}
+							\vspace{-0.2cm}  %调整图片与上文的垂直距离
+							\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+							%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+							\centering
+							\includegraphics[scale=0.6]{support_vector_soft_margin_linear_svm.png}
+							\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+							\caption{support vector soft margin linear svm}
+						\end{figure}
+						这时的支持向量要比线性可分时的情况复杂一些. 图中, 分离超平面由实线表示, 间隔边界由虚线表示, 正例点由 “。” 表示, 负例点由 "$\times$"表示. 图中还标出了实例 $x_i$ 到间隔边界的距离 $\frac{\xi}{\parallel w \parallel}$
+						
+						\textcolor{red}{软间隔的支持向量 $x_i$  或者在间隔边界上, 或者在间隔边界与分离超平面之间, 或者在分离超平面误分一侧.}
+						
+						KKT条件中式 \ref{alpha_euqal_restrict_kkt_soft_margin}、 \ref{xi_equal_restrict_kkt_soft_margin}、 \ref{not_equal_restrict_kkt_soft_margin} 得出目标函数中 $\alpha_i$ 取值的意义：
+						\begin{enumerate}
+							\item 在两条间隔线外面的点, 对应前面的系数 $\alpha_i$ 为 0, 
+								\begin{align}
+									\xi = 0, y_i(w^* x + b) -1 + \xi > 0 \Leftrightarrow  \alpha_i = 0 
+								\end{align}
+								
+							\item 在两条间隔线里面的对应 $\alpha_i$ 为 C,
+								\begin{itemize}
+									\item 支持向量落在间隔边界和分离超平面之间
+										\begin{align}
+											&0 < \xi < 1 \Leftrightarrow \notag \\
+											 &\mu =0, \alpha_i = C, y_i(w^* x + b) -1 + \xi = 0, 0 < y_i(w^* x + b) < 1 
+										\end{align}
+										
+									\item 支持向量落在分离超平面上
+										\begin{align}
+											&\xi = 1 \Leftrightarrow \notag \\
+											&\mu =0, \alpha_i = C, y_i(w^* x + b) -1 + \xi = 0,  y_i(w^* x + b) = 0  
+										\end{align}
+										
+									\item 支持向量位于分离超平面误分一侧
+										\begin{align}
+											&\xi > 1 \Leftrightarrow \notag \\
+											&\mu =0, \alpha_i = C, y_i(w^* x + b) -1 + \xi = 0, y_i(w^* x + b) < 0  
+										\end{align}
+								\end{itemize}
+								
+							\item 在两条间隔线上的对应的系数 $\alpha_i$ 在 0 和 C 之间
+								\begin{align}
+									&\xi = 0, y_i(w^* x + b) -1 = 0 \Leftrightarrow \notag \\
+									&0 \leq \mu \leq C, 0 \leq \alpha \leq C, y_i(w^* x + b) -1 + \xi = 0
+								\end{align}
+						\end{enumerate}							
 				\end{enumerate}
 			
 			\subsection{\quad loss function}
 				\begin{enumerate}
-					\item
+					\item $l_{0/1}$ loss function
+				
+						在软间隔允许某些样本不满足约束 
+							\begin{align}
+								y_i(w^T x_i + b) \geq 1 \label{restrict_0_1_loss_function}
+							\end{align}\
+						在最大化间隔时, 不满足的样本应尽可能少, 则优化目标为
+							\begin{align}
+								\begin{split}
+									\min\limits_{w,b} \frac{1}{2} \parallel w \parallel ^2 + C\sum_{i=1}^{m} l_{0/1} (y_i(w^T x_i + b) -1)
+								\end{split} \label{0_1_loss_function}
+							\end{align}
+						其中, $C>0$ 是一个常数, $l_{0/1}$ 是"0/1损失函数"
+							\begin{align}
+								l_{0/1}(z) = \left\{
+								\begin{matrix}
+									&1, \quad &\text{if} \ z<0;\\
+									&0, \quad &\text{otherwise}
+								\end{matrix}
+								\right.
+							\end{align}
+						
+						显然, 当C为无穷大时, 式 \ref{0_1_loss_function} 迫使所有样本满足约束 \ref{restrict_0_1_loss_function}, 于是式 \ref{0_1_loss_function} 等价于式 \ref{basic_form_svm}; 当 C 取有限制时, 式 \ref{0_1_loss_function} 允许一些样本不满足约束
+						
+						
+					\item surrogate loss 替代损失
+						
+						因为 $l_{0/1}$ 非凸、非连续, 数学性质不好, 使得式 \ref{0_1_loss_function} 不易直接求解.
+						
+						于是, 通常用其他一些函数来代替 $l_{0/1}$ , 称为 "替代损失"
+						
+						替代损失函数一般具有较好的数学性质, 如它们通常是凸的连续函数且是 $l_{0/1}$ 的上届.
+						
+					\item $l_{0/1}$ 损失函数、 hinge 损失函数、 指数损失函数、 对率损失函数
+					 	\begin{figure}[H]
+						 	%\label{Fig:three_surrogate_loss_function}
+						 	\vspace{-0.2cm}  %调整图片与上文的垂直距离
+						 	\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+						 	%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+						 	\centering
+						 	\includegraphics[scale=0.8]{three_surrogate_loss_function.png}
+						 	\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+						 	\caption{three surrogate loss function}
+						 	\label{Fig:three_surrogate_loss_function}
+					 	\end{figure}
+					
+					\item hinge 损失：
+							\begin{align}
+								l_{hinge}(z) = \max(0, 1-z)
+							\end{align}
+						  指数损失函数：
+						  	\begin{align}
+						  		l_{exp}(z) = \text{exp}(-z)
+						  	\end{align}
+						  对率损失：
+						  	\begin{align}
+						  		l_{log}(z) = \log(1 + \text{exp}(-1))
+						  	\end{align}
+						  	
+					\item 若采用 hinge 损失, 则式 \ref{0_1_loss_function} 变成
+						\begin{align}
+							\min\limits_{w,b} \frac{1}{2} \parallel w \parallel ^2 + C\sum_{i=1}^{m} \max(0, 1 - y_i(w^T x_i + b)) \label{hinge_loss_function}
+						\end{align}
+					
+					\item 引入松弛变量 $\xi_i \geq 0$, 可将式 \ref{hinge_loss_function} 重写为
+						\begin{align}
+							\min_{w,b,\xi_i} \frac{1}{2} \parallel w \parallel ^2 + C\sum_{i=1}^{m}\xi_i 
+						\end{align}
+						
+					\item 图 \ref{Fig:three_surrogate_loss_function} 中, 横轴是函数间隔 $y(w \cdot x + b)$，纵轴是损失.
+					
+						0-1 损失函数是二分类问题的真正的损失函数, 而合页损失函数是 0-1 损失函数的上界. 
+						\begin{figure}[H]	
+							\vspace{-0.2cm}  %调整图片与上文的垂直距离
+							\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+							%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+							\centering
+							\includegraphics[scale=0.4]{hinge_loss_function.png}
+							\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+							\caption{hinge loss function}
+							\label{Fig:hinge_loss_function}
+						\end{figure}
+						图 \ref{Fig:hinge_loss_function} 中虚线显示的是感知机的损失函数 $[-y_i (w \cdot x_i + b)]_+$. 
+						
+						当样本点 $(x_i, y_i)$ 点被分类正确时, 损失是0, 否则损失是 $-y_i(w \cdot x_i + b)$.
+						
+						相比之下, 合页损失函数不仅要分类正确, 而且确信度足够高时损失才是 0. 也就是说, 合页损失函数对学习有更高的要求.
+				\end{enumerate}
+				
+		\section{\quad kernel function}
+			如果样本线性不可分, 通过 $\phi : X \rightarrow F$ 函数映射将输入样本映射到另外一个高维空间并使其线性可分.
+			
+			将内积 $<x_i, x_j>$ 变成 $<\phi(x_i), \phi(x_j)>$
+			
+			求解 $<\phi(x_i), \phi(x_j)>$ 有两种方法：
+				\begin{enumerate}
+					\item 先找到这种映射 $\phi(x)$, 然后将输入空间中的样本映射到新的空间中, 最后在新空间中取求内积 $<\phi(x_i), \phi(x_j)>$
+					
+					\item 核技巧： 不显示的定义映射函数 $\phi(x)$, 值定义核函数 $K(x_i, x_j)$
 				\end{enumerate}
 			
-		\section{\quad kernel function}
-		
+			\subsection{\quad define directily reflect function}
+				以多项式 $x_1 + x_2 + x_1^2 + x_2^2 + c = 0$ 为例
+				
+				将其进行变换, $c_1 = x_1, c_2 = x_2, c_3 = x_1^2, c_4 = x_2^2$, 得到：
+				$c_1 + c_2 + c_3 + c_4 = 0$, 也就是说通过把输入空间从二维向四维映射后, 样本有线性不可分变成了线性可分, 但是这种转化带来的直接问他是维度变高了, 这意味着, 首先可能导致后续计算变复杂, 其次可能出现维度灾难.
+				
+				对于学习器而言就是: 特征空间维数可能最终无法计算, 而它的泛化能力 (学习器对训练样本以外数据的适应性) 会随着维度的增大而大大降低, 这也违反了 "奥坎姆剃刀", 最终可能使内积 $<\phi(x_i), \phi(x_j)>$ 无法求出, 于是也就失去这种转化的优势了
+				
+				
+			\subsection{\quad kernel function}
+				\begin{enumerate}
+					\item concept
+						
+						definition one: 核是一个函数 K, 对于所有的 $x_1, x_2 \in X$ 满足, $K<x_1, x_2> = <\phi(x_1), \phi(x_2)>$, 这里的 $\phi$ 为从 X 到内积特征空间 F 的映射
+					
+					\item picture
+						\begin{figure}[H]	
+							\vspace{-0.2cm}  %调整图片与上文的垂直距离
+							\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+							%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+							\centering
+							\includegraphics[scale=0.6]{reflect_kernel_function.png}
+							\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+							\caption{reflect kernel function}
+							\label{Fig:reflect_kernel_function}
+						\end{figure}
+					
+					\item condition
+					
+						$K(x, y)$ 什么时候才是核函数呢？
+						
+						假设有输入有输入空间 $X = x_1, x_2, ..., x_n$ 且 $K(x, y)$ 为对称函数, 那么对于所有样本得到下面矩阵： $k = K(x_i, x_j) (i,j = 0,...,n)$, 显然, 这个是对称矩阵, 那么对于对称矩阵一定存在一个正交矩阵, 使得 $P^T k P = \Lambda$, 这里 $\Lambda$ 是包含 $k$ 的特征值 $\lambda_i$ 的对角矩阵, 特征值 $\lambda_i$ 对应的特征向量为 $\nu_{i} = (\nu_{i1}, \nu_{i2}, ..., \nu_{in})^T$, 其中 n 为样本数, 对输入空间做如下映射 $\phi$
+							\begin{align}
+								&\phi (x_i) \Rightarrow (\sqrt{\lambda_1} \nu_{1i}, \sqrt{\lambda_2} \nu_2i, ..., \sqrt{\lambda_n} \nu_ni)^T \in R^n (i=1,2,...,n)\\
+								&\phi(x) = \left(\phi(x_1), \phi(x_2), ..., \phi(x_n)\right)\\
+								&K(x_i,x_j) = \phi(x_i)^T \phi(x_j)
+							\end{align}
+							
+						于是有 $<\phi(x_i), \phi(x_j)> = \sum_{t=1}^{n} \lambda_t \nu_{ti} \nu_{tj} = (V \Lambda V^T)_{i,j} = k_{i,j} = K(x_i, x_j)$ (其中 V 为特征向量组成的矩阵, $\Lambda$ 为相应特征值组成的三角矩阵), 也就是说 K 是对应于映射的核函数.
+						
+					\item example
+						
+						有 $k = \left[ \begin{matrix}
+						4 \ 0 \ 0 \\ 0 \ 3 \ 1 \\ 0 \ 1 \ 3
+						\end{matrix} \right]$, 由
+						$|k - \lambda E| = 0$ 解得特征值: $\lambda_1 = \lambda_2 = 4$, $\lambda_3 = 2$, 对 2 重特征根 4 求  $(A-4E)x = 0$ 的基础解系、正交化、单位化后得到特征向量: $\nu_1 = (1,0,0)^T$ 和 $\nu_2 = (0, \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}})^T$, 对 $\lambda_3$ 的特征向量单位化后得到 $\nu_3 = (0, -\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}})^T$, 于是有
+							$V = (\nu_1, \nu_2, \nu_3) = \begin{vmatrix}
+								1 & 0 & 0\\
+								0 & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}\\
+								0 & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+							\end{vmatrix}$
+						满足$V^{-1} k V = \Lambda = \begin{bmatrix}
+								4 & 0 & 0\\
+								0 & 4 & 0\\
+								0 & 0 & 2
+						\end{bmatrix}$, 对所有输入样本做映射得：
+						\begin{align}
+							&\phi(x_1) = (\sqrt{4}\times 1, \sqrt{4} \times 0, \sqrt{2} \times 0)^T = (2,0,0)^T;\\
+							&\phi(x_2) = (\sqrt{4}\times 0, \sqrt{4} \times \frac{1}{\sqrt{2}}, \sqrt{2} \times -\frac{1}{\sqrt{2}})^T = (0,\sqrt{2},-1)^T;\\
+							&\phi(x_3) = (\sqrt{4}\times 0, \sqrt{4} \times \frac{1}{\sqrt{2}}, \sqrt{2} \times \frac{1}{\sqrt{2}})^T = (0,\sqrt{2},1)^T
+						\end{align}
+						随便选两个做内积, 如 $<\phi(x_2), \phi(x_3)> = 0 \times 0 + \sqrt{2} \times \sqrt{2} + (-1)\times 1 = 1 = k(x_2, x_3)$
+						
+						由此可见： $K(x,y)$ 就是对应于特征映射 $\phi(x)$ 的核函数 
+						
+					\item conclusion
+						\begin{itemize}
+							\item 定理1： 存在有限输入空间 X, K(x,y) 为 X 上的对称函数, 那么 K(x,y) 是核函数的冲要条件是矩阵 $k = (K(x_i, x_j)) (i,j=0,...,n)$ 半正定, 此时相当于对输入空间想特征空间进行了 \textcolor{red}{隐式} 的 $\phi(x)$ 映射. 对于上面的映射 $\phi(x)$, 令 $\phi_i(x_j) = \sqrt{\lambda_i} \nu_{ij}$，于是 $\phi(x) = (\phi_1(x), \phi_2(x), ..., \phi_n(x))$
+							
+							\item 令 $\chi$ 为输入空间, $\kappa(\cdot,\cdot)$ 是定义在 $\chi \times \chi$ 上的对称函数, 则 $\kappa$ 是核函数当且仅当对于任意数据 $D = \left\{ x_1, x_2, ..., x_n \right\}$, kernel matrix K 总是半正定的
+							\begin{align}
+								\boldsymbol{K} = 
+									\begin{bmatrix}
+										&\kappa(x_1,x_1) &\cdots &\kappa(x_1,x_j) &\cdots &\kappa(x_1,x_m)\\
+										&\vdots & \ddots &\vdots &\ddots &\vdots\\
+										&\kappa(x_i,x_1) &\cdots &\kappa(x_i,x_j) &\cdots &\kappa(x_i,x_m)\\
+										&\vdots &\ddots &\vdots &\ddots &\vdots\\
+										&\kappa(x_m,x_1) &\cdots &\kappa(x_m,x_j) &\cdots &\kappa(x_m,x_m)
+									\end{bmatrix}
+							\end{align} 
+							事实证明, 只要一个对称函数所对应的核矩阵半正定, 它就能作为核函数使用. 事实上, 一个半正定核矩阵, 总能找到一个与之对应的映射 $\phi$, 换言之, 任何一个核函数都隐式得定义了一个称为 “再生核希尔伯特空间” 的特征空间
+						\end{itemize}
+					
+					\item common kernel function
+						\begin{table}
+							\centering
+							\vspace{-1cm}
+							%\scriptsize
+							%\renewcommand{\tablename}{\xiaosihao\HEI table}
+							\setlength{\belowcaptionskip}{0.2cm}   %调整图片标题与图距离
+							\renewcommand{\tablename}{Tab}
+							\caption{common kernel function}						
+							\begin{tabular}{l l l}
+								\hline
+								名称 &表达式 &参数\\
+								\hline
+								线性核 &$\kappa(x_i,x_j) = x_i^T x_j$ &\\
+								多项式核 &$\kappa(x_i,x_j) = (x_i^T x_j)^d$ &$d \geq 1$为多项式的次数\\
+								高斯核 &$\kappa(x_i,x_j) = \text{exp}(-\frac{\parallel x_i - x_j \parallel^2}{2\sigma^2})$ &$\sigma>0$ 为高斯核的带宽 (width)\\ 
+								拉普拉斯核 &$\kappa(x_i,x_j) = \text{exp}(-\frac{\parallel x_i - x_j \parallel}{\sigma})$ &$\sigma>0$\\
+								Sigmoid核 &$\kappa(x_i,x_j) = \tanh(\beta x_i^T x_j + \theta)$ &$\tanh \text{为双曲正切函数}, \beta>0, \theta<0$\\
+								\hline
+							\end{tabular}
+						\end{table}
+					
+					\item Gussian kernel function
+					
+						在实际应用中, 往往依赖先验领域知识 / 交叉验证等方案才能选择有效的核函数. 
+						
+						没有更多先验信息, 则使用高斯核函数
+						\begin{enumerate}[]
+							\item 						
+							\begin{figure}[H]
+								%\label{concept_gussian_kernel_function}
+								\vspace{-0.2cm}  %调整图片与上文的垂直距离
+								\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+								%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+								\centering
+								\includegraphics[height=7cm,width=14cm]{concept_gussian_kernel_function.png}
+								\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+								%\caption{concept gussian kernel function}
+							\end{figure}
+							
+							\item 
+							\begin{figure}[H]
+								\centering
+								%\label{theory_gussian_kernel_function}
+								\vspace{-0.2cm}  %调整图片与上文的垂直距离
+								\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+								%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+								
+								\includegraphics[height=9cm,width=14.5cm]{theory_gussian_kernel_function.png}
+								\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+								%\caption{theory gussian kernel function}
+							\end{figure}
+							
+							\item 
+							\begin{figure}[H]
+								\label{result_gussian_kernel_function}
+								\vspace{-0.2cm}  %调整图片与上文的垂直距离
+								\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+								%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+								\centering
+								\includegraphics[height=10cm,width=14.5cm]{result_gussian_kernel_function.png}
+								\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+								\caption{gussian kernel function}
+							\end{figure}							
+						\end{enumerate}
+					
+					\item kernel function in svm
+					
+						选定核 $K(x_i,x_j)$ 后, 原问题变成
+							\begin{align}
+								\min\limits_{\alpha} \quad & \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i\alpha_j y_i y_j K(x_i \cdot x_j) - \sum_{i=1}^{n}\alpha_i \\
+								\text{s.t.} \quad &\sum_{i=1}^{n} \alpha_i y_i = 0\\
+								&0 \leq \alpha_i \leq C, \quad i=1,2,...,n
+							\end{align}
+						优化问题得最优解, 核要满足 Mercer 条件, 即矩阵 $k = K(x_i, x_j), (i,j = 0,1,...,n)$ 在所有训练上半正定, 说明这个优化是凸优化, 这个条件保证了最大化间隔优化问题有唯一解.
+						
+						最后求得 $\alpha^*, b^*$, 那么从输入空间向特征空间隐式映射后所得到的最大间隔超平面也就出来了:
+							\begin{align}
+								f(x) = \sum_{i=1}^{n} \alpha^* y_i K(x_i, x_j) + b^*
+							\end{align}
+						且有几何间隔
+							\begin{align}
+								\gamma = \frac{1}{\parallel w^* \parallel} = \left( \sum_{i\in\text{support vector}} \alpha^*\right)^{\frac{1}{2}}
+							\end{align}
+				\end{enumerate}
+			
 		\section{\quad sequential minimal optimization algorithm}
 			\subsection{\quad concept}
 				\begin{enumerate}
@@ -1209,10 +1552,241 @@
 			
 			\subsection{\quad process}
 				\begin{enumerate}
-					\item 考察目标函数, 假设 $\alpha_1$ 和 $\alpha_2$ 是变量, 其他是定值:
+					\item 考察目标函数
 						\begin{align}
-							
+							\min\limits_{\alpha} \quad & \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i\alpha_j y_i y_j (x_i \cdot x_j) - \sum_{i=1}^{n}\alpha_i \\
+							\text{s.t.} \quad &\sum_{i=1}^{n} \alpha_i y_i = 0\\
+							&0 \leq \alpha_i \leq C, \quad i=1,2,...,n
 						\end{align}
 
+					\item 假设 $\alpha_1$ 和 $\alpha_2$ 是变量, 其他是定值:
+						\begin{align}
+							\begin{split}
+								\min\limits_{\alpha_1, \alpha_2} \quad &W(\alpha_1, \alpha_2)\\
+									&=\frac{1}{2} \kappa_{11} \alpha_1^2 + \frac{1}{2}\kappa_{22} \alpha_2^2 + y_1 y_2 \alpha_1 \alpha_2 \kappa_{12} - (\alpha_1 + \alpha_2) \\ 
+									&+ y_1 \alpha_1 \sum_{i=3}^{N}y_1 \alpha_i \kappa_{i1} + y_2\alpha_2\sum_{i=3}^{N}y_i\alpha_i\kappa_{i2}
+							\end{split} \label{target_function_smo}
+									\\
+							\begin{split}
+								\text{s.t.} \quad &\alpha_1 y_1 + \alpha_2 y_2 = - \sum_{i=3}^{N}y_i\alpha_i = \xi
+							\end{split} \label{equal_alpha_restrict_smo}
+							\\
+							\begin{split}
+								&0 \leq \alpha_i \leq C
+							\end{split} \label{not_equal_alpha_restrict_smo}			
+						\end{align}
+						其中, $\xi$ 是常数, 目标函数中省略了不含 $\alpha_1, \alpha_2$ 的常数项
+						
+					\item 为了求解两个变量的二次规划问题, 首先分析约束条件, 然后在此约束条件下求极小. 
+						
+						由于只有两个变量, 约束可以用二维空间中的图形表示
+						\begin{figure}[H]
+							\label{two_variable_optimization}
+							\vspace{-0.2cm}  %调整图片与上文的垂直距离
+							\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+							%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+							\centering
+							\includegraphics[scale=0.8]{two_variable_optimization.png}
+							\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+							\caption{two variable optimization}
+						\end{figure}
+
+					\item 不等式约束 \ref{not_equal_alpha_restrict_smo} 使得 	$(\alpha_1, \alpha_2)$ 在盒子 $[0, C] \times [0, C]$ 内, 等式约束 \ref{equal_alpha_restrict_smo} 使 $\alpha_1, \alpha_2$ 在平行于盒子 $[0, C] \times [0, C]$ 的对角线的直线上. 
+					
+						因此要求的是目标函数在一条平行于对角线的线段上的最优值. 这使得两个变量的最优化问题成为实质上的单变量的最优化问题, 不妨考虑为变量 $\alpha_2$ 的最优化问题
+						
+					\item 假设问题 \ref{target_function_smo} $\sim$ \ref{not_equal_alpha_restrict_smo} 的初始可行解为 $\alpha_1^{old}, \alpha_2^{old}$, 最优解为 $\alpha_1^{new}, \alpha_2^{new}$, 并且假设在沿着约束方向未经剪辑时 $\alpha_2$ 的最优解为 $\alpha_2^{new,unc}$.
+					\textcolor{red}{注意：此处最优值是在图中直线上移动的}
+					
+					\item 综合式 \ref{equal_alpha_restrict_smo} 和 \ref{not_equal_alpha_restrict_smo} 这两个约束条件, 求取 $\alpha_2^{new}$ 的取值范围
+					
+					由于 $\alpha_2^{new}$ 需满足不等式约束 \ref{not_equal_alpha_restrict_smo}, 所以最优值 $\alpha_2^{new}$ 的取值范围必须满足条件
+						\begin{align}
+							L \leq \alpha_2^{new} \leq H
+						\end{align}
+					其中, L 和 H 是 $\alpha_2^{new}$ 所在的对角线段端点的界. 
+						\begin{enumerate}
+							\item $y_1 \neq y_2$ 时, 根据 $\alpha_1^{new} y_1 + \alpha_2^{new} y_2 = \alpha_1^{old} y_1 + \alpha_2^{old} y_2 = \xi$ 可得 $\alpha_1^{old} - \alpha_2^{old} = \xi$, 所以有
+								\begin{align}
+									&L = \max(0, -\xi) = \max(0, \alpha_2^{old} - \alpha_1^{old})\\
+									&H = \min(C, C-\xi) = \min(C, C + \alpha_2^{old} - \alpha_1^{old})
+								\end{align}
+								\begin{figure}[H]	
+									\vspace{-0.2cm}  %调整图片与上文的垂直距离
+									\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+									%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+									\centering
+									\includegraphics[scale=0.8]{y_1_not_equal_y_2_smo.png}
+									\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+									\caption{y1 not equal y2 smo}
+									\label{y_1_not_equal_y_2_smo}
+								\end{figure}
+							
+							\item $y_1 = y_2$时, 根据 $\alpha_1^{new} y_1 + \alpha_2^{new} y_2 = \alpha_1^{old} y_1 + \alpha_2^{old} y_2 = \xi$ 可得 $\alpha_1^{old} + \alpha_2^{old} = \xi$, 所以有
+								\begin{align}
+									&L = \max(0, \xi - C) = \max(0, \alpha_2^{old} + \alpha_1^{old} - C)\\
+									&H = \min(C, \xi) = \min(C, \alpha_2^{old} + \alpha_1^{old})
+								\end{align}
+								\begin{figure}[H]
+									\vspace{-0.2cm}  %调整图片与上文的垂直距离
+									\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+									%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+									\centering
+									\includegraphics[scale=0.8]{y_1_equal_y_2_smo.png}
+									\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+									\caption{y1 equal y2 smo}
+									\label{y_1_equal_y_2_smo}
+								\end{figure}
+						\end{enumerate}
+					
+					\item 下面首先求沿着约束方向未经剪辑即未考虑不等式约束 \ref{not_equal_alpha_restrict_smo} 时 $\alpha_2$ 的最优解 $\alpha_2^{new, unc}$; 然后再求剪辑后 $\alpha_2$ 的解 $\alpha_2^{new}$. 
+					
+					\textcolor{red}{以下smo此时求解 $\alpha_1$ 和 $\alpha_2$ 的迭代公式}	
+					
+					为叙述简单记, 记(此处 $g(x)$ 中 i 和下面 E 中所表示的 j 一致)
+						\begin{align}
+							g(x) = \sum_{i=1}^{N} \alpha_2 y_i K(x_i, x) + b
+						\end{align}
+						令
+						\begin{align}
+							E_i = g(x_i) - y_i = \left( \sum_{j=1}^{N} \alpha_j y_j K(x_j, x_i) + b \right) - y_i \quad i=1,2
+						\end{align}
+						令
+						\begin{align}
+							\eta = K_{11} + K_{22} - 2K{12} = \parallel \phi(x_1) - \phi(x_2) \parallel^2
+						\end{align}
+						$\phi(x)$ 是输入空间到特征空间的映射, $E_i, \quad i=1,2$
+						
+						则最优化问题 \ref{target_function_smo} $\sim$ \ref{not_equal_alpha_restrict_smo} 沿着约束方向未经剪辑时的解是
+						\begin{align}
+							\alpha_2^{new, unc} = \alpha_2^{old} + \frac{y_2(E_1 - E_2)}{\eta}
+						\end{align}
+						经剪辑后 $\alpha_2$ 的解是
+						\begin{align}
+							\alpha_2^{new} = \left\{
+								\begin{matrix}
+									&H, &\alpha_2^{new, unc} > H\\
+									&\alpha_2^{new, unc}, &L\leq \alpha_2^{new, unc} \leq H\\
+									&L, &\alpha_2^{new, unc} < L
+								\end{matrix}
+							\right.
+						\end{align}
+						由 $\alpha_2^{new}$ 求得 $\alpha_1^{new}$ 是
+							\begin{align}
+								\alpha_1^{new} = \alpha_1^{old} + y_1 y_2 (\alpha_2^{old} - \alpha_2^{new})
+							\end{align}
+						上述公式具体证明过程看博客
+						\url{https://blog.csdn.net/v_JULY_v/article/details/7624837}
+						\url{https://www.cnblogs.com/jerrylead/archive/2011/03/18/1988419.html}
+						\url{https://blog.csdn.net/the_lastest/article/details/78637565}
+						结合李航的统计学和周志华的机器学习
+					
+					\item 如何选择乘子 $\alpha_1$ 和 $\alpha_2$ (参考统计学习方法, 介绍详细)
+					
+					SMO 算法在每个子问题中选择两个变量优化, 其中至少一个变量是违反 KKT 条件的.
+						\begin{itemize}
+							\item 对于 $\alpha_1$, 即第一个乘子, 可以通过3种不满足 KKT 的条件来找
+							
+							\item 对于第二个乘子 $\alpha_2$ 可以寻找满足条件： $\max|E_i - E_j|$ 的乘子
+						\end{itemize}
+					
+					\item 计算 阈值 b 和 差值 $E_i$
+						b在满足下述条件：
+							\begin{align}
+								b = \left\{
+									\begin{matrix}
+										&b_1 &if \ 0<\alpha_1^{new}<C\\
+										&b_1 &if \ 0<\alpha_1^{new}<C\\
+										&(b_1 + b_2)/2 &otherwise
+									\end{matrix}
+								\right.
+							\end{align} 
+						下更新b:
+							\begin{align}
+							\centering
+								&b_1^{new} = b^{old} - E_1 - y_1(\alpha_1^{new} - \alpha_1^{old}) K(x_1, x_1) - y_2(\alpha_2^{new} - \alpha_2{old}) K(x_1, x_2) \\
+								&b_2^{new} = b^{old} - E_2 - y_1(\alpha_1^{new} - \alpha_1^{old}) K(x_1, x_2) - y_2(\alpha_2^{new} - \alpha_2{old}) K(x_2, x_2)
+							\end{align}	
+						且每次更新完两个乘子的优化后, 都需要再重新计算 b, 及对应的 $E_i$ 值
+						
+						最后更新完所有 $\alpha_i$, y 和 b, 这样模型就出来了, 从而即可求出咱们开头提出的分类函数：
+							\begin{align}
+								f(x) = \sum_{i=1}^{n} \alpha_i y_i <x_i, x> + b
+							\end{align}
+							
+					\item summary of smo algorithm step
+					
+						输入： 训练数据集 $T = \left\{ (x_1,y_1), (x_2,y_2),..,(x_N,y_N)\right\}$, 其中, $x_i \in \chi = \boldsymbol{R}^n, \ y_i \in \gamma={-1,+1}, \ i=1,2,...,N$, 精度$\varepsilon$
+						
+						输出： 近似解 $\hat{\alpha}$
+						\begin{enumerate}[(1)]
+							\item 取初值 $\alpha^{(0)} = 0$, 令 $k=0$
+							
+							\item 选取优化变量 $\alpha_1^{k}, \alpha_2^{k}$, 解析求解两个变量的最优化问题 \ref{target_function_smo} $\sim$ \ref{not_equal_alpha_restrict_smo}, 求得最优解 $\alpha_1^{k+1}, \alpha_2^{k+1}$, 更新 $\alpha$ 为 $\alpha^{(k+1)}$
+								\begin{enumerate}
+									\item 第一步选取一对 $\alpha_i$ 和 $\alpha_j$, 选取方法使用启发方法
+									
+									\item 第二步, 固定除 $\alpha_i$ 和 $\alpha_j$ 之外的其他参数, 确定 W 极值条件下的 $\alpha_i, \alpha_j$ 由 $\alpha_i$ 表示
+								\end{enumerate}
+							
+								\textcolor{red}{detail explaintation:}
+								 \begin{enumerate}
+								 	\item 假定在某一次迭代中, 需要更新 $x_1, x_2$ 对应的拉格朗日乘子 $\alpha_1, \alpha_2$, 那么这个小规模的二次规划问题写为：
+									 	\begin{figure}[H]
+									 		\vspace{-0.2cm}  %调整图片与上文的垂直距离
+									 		\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+									 		%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+									 		\centering
+									 		\includegraphics[scale=0.5]{update_alpha_smo_summary.png}
+									 		\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+									 		\caption{update alpha smo summary}
+									 		\label{update_alpha_smo_summary}
+									 	\end{figure}
+
+									\item 那么在每次迭代中, 如何更新乘子呢？ 引用\url{http://staff.ustc.edu.cn/~ketang/PPT/PRLec5.pdf}的两张ppt说明下：
+										\begin{figure}[H]
+											\vspace{-0.2cm}  %调整图片与上文的垂直距离
+											\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+											%\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离
+											\centering
+											\includegraphics[scale=0.7]{detail_update_alpha_smo_summary.png}
+											\renewcommand{\figurename}{Fig} % set picture title starting with Fig or 图
+											\caption{detail update alpha smo summary}
+											\label{detail_update_alpha_smo_summary}
+										\end{figure}
+									
+									\item 知道了如何更新乘子, 那么选取哪些乘子进行更新呢？具体选择方法有以下两个步骤：
+										\begin{itemize}
+											\item step1: 先 “扫描” 所有乘子, 把第一个违反 KKT 条件的作为更新对象, 令为 $a_1$
+											
+											\item step2: 在所有不违反 KKT 条件的乘子中, 选择使 $|E_1 - E_2|$ 最大的 $\alpha_2$ 进行更新, 使得能最大限度增大目标函数的值 (类似于梯度下降, 此外 $E_i = \mu_i - y_i$, 而 $\boldsymbol{\mu} = \vec{w} \cdot \vec{x} - b$, 求出来的 E 代表函数 $\mu_i$ 对输入 $x_i$ 的预测值与真实输出类标记 $y_i$ 之差)
+										\end{itemize}
+									
+									\item 每次更新完两个乘子的优化后, 都需要再重新计算 b, 及对应的 $E_i$ 值
+								 \end{enumerate}
+									
+							\item 若在精度 $\varepsilon$ 范围内满足停机条件
+								\begin{align}
+									&\sum_{i=1}^{N} \alpha_i y_i = 0\\
+									&0 \leq \alpha_i \leq C, \quad i =1,2,..,N\\
+									&y_i \cdot g(x_i) = 
+										\left\{  
+											\begin{matrix}
+												&\geq 1, &\{x_i | \alpha_i=0 \}\\
+												&=1, &\{ x_i | 0<\alpha_i<C\}\\
+												&\leq 1, &\{ x_i | \alpha_i = C\}
+											\end{matrix}
+										\right.
+								\end{align}
+								其中, 
+									\begin{align}
+										g(x_i) = \sum_{j=1}^{N} \alpha_j y_j K(x_j, x_i) + b
+									\end{align}
+								则转 (4), 否则令 $k = k + 1$, 转 (2)
+								
+							\item 取 $\hat{\alpha} = \alpha^{(k+1)}$
+						\end{enumerate}
 				\end{enumerate}
+			
+			与通常的分解算法比较，尽管 SMO 可能需要更多的迭代次数，但每次迭代的计算量比较小，所以该算法表现出较好的快速收敛性，且不需要存储核矩阵，也没有矩阵运算。
 \end{document}

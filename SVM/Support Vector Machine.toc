@@ -46,4 +46,12 @@
 \contentsline {subsection}{\numberline {4.2.2}\hskip 1em\relax derivation target function}{28}{subsection.4.2.2}% 
 \contentsline {subsection}{\numberline {4.2.3}\hskip 1em\relax dual property}{28}{subsection.4.2.3}% 
 \contentsline {subsection}{\numberline {4.2.4}\hskip 1em\relax Linear support vector machine learning algorithm}{29}{subsection.4.2.4}% 
-\contentsline {subsection}{\numberline {4.2.5}\hskip 1em\relax loss function}{30}{subsection.4.2.5}% 
+\contentsline {subsection}{\numberline {4.2.5}\hskip 1em\relax KKT of soft margin}{30}{subsection.4.2.5}% 
+\contentsline {subsection}{\numberline {4.2.6}\hskip 1em\relax support vector}{30}{subsection.4.2.6}% 
+\contentsline {subsection}{\numberline {4.2.7}\hskip 1em\relax loss function}{32}{subsection.4.2.7}% 
+\contentsline {section}{\numberline {4.3}\hskip 1em\relax kernel function}{34}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}\hskip 1em\relax define directily reflect function}{34}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.2}\hskip 1em\relax kernel function}{35}{subsection.4.3.2}% 
+\contentsline {section}{\numberline {4.4}\hskip 1em\relax sequential minimal optimization algorithm}{40}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}\hskip 1em\relax concept}{40}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}\hskip 1em\relax process}{40}{subsection.4.4.2}% 
